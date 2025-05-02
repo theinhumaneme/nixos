@@ -114,6 +114,16 @@
     ];
   };
 
+  services = {
+    syncthing = {
+      enable = true;
+      user = "kalyanm";
+      openDefaultPorts = true;
+      dataDir = "/home/kalyanm";
+      configDir = "/home/kalyanm/.config/syncthing"; # Folder for Syncthing's settings and keys
+    };
+  };
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "kalyanm";
