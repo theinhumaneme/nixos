@@ -19,6 +19,8 @@
         with pkgs;
         [
           git
+          tree
+          btop-rocm
           gnome-power-manager
           android-tools
           nixfmt-rfc-style
