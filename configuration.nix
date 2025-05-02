@@ -86,6 +86,7 @@
       "wheel"
     ];
     packages = with pkgs; [
+      google-chrome
     ];
   };
 
@@ -98,7 +99,7 @@
   systemd.services."autovt@tty1".enable = false;
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
