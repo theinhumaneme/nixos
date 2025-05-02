@@ -10,6 +10,10 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # Bootloader.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [
