@@ -126,6 +126,8 @@
       oh-my-zsh
       android-tools
       nixfmt-rfc-style
+      gnomeExtensions.dash2dock-lite
+      gnomeExtensions.blur-my-shell
 
       # switch to unstable later
       google-chrome
