@@ -101,8 +101,11 @@
   services.displayManager.autoLogin.user = "kalyanm";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  systemd.services = {
+    "autovt@tty1".enable = false;
+    "getty@tty1".enable = false;
+    NetworkManager-wait-online.enable = false;
+  };
 
   # Install firefox.
   programs.firefox.enable = false;
