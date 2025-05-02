@@ -106,11 +106,23 @@
       "wheel"
     ];
     packages = with pkgs; [
-      google-chrome
+      gnome-power-manager
+      gnome-tweaks
+      zsh
+      oh-my-zsh
       android-tools
-      lazygit
+      nixpkgs-fmt
+
+      # switch to unstable later
+      google-chrome
+      obsidian
+      zed-editor
       vscode-fhs
-      nixfmt-rfc-style
+      github-desktop
+      spotify
+      aria
+      mpv
+      lazygit
     ];
   };
 
