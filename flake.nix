@@ -33,7 +33,7 @@
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        ThinkPadT16 = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit pkgs pkgsUnstable;

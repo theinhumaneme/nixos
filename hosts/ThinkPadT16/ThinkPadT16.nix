@@ -56,7 +56,7 @@
   virtualisation.docker.enable = true;
 
   # Networking
-  networking.hostName = "nixos";
+  networking.hostName = "ThinkPadT16";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
   networking.nameservers = [
