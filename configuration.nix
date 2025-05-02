@@ -87,6 +87,8 @@
     ];
     packages = with pkgs; [
       google-chrome
+      vscode-fhs
+      nixfmt-rfc-style
     ];
   };
 
