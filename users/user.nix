@@ -38,6 +38,7 @@
           spotify
           aria
           mpv
+          power-profiles-daemon
 
         ])
         ++ (lib.optionals enableDevTools [
