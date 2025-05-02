@@ -73,6 +73,7 @@
     layout = "us";
     variant = "";
   };
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
