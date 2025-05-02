@@ -111,7 +111,7 @@
       zsh
       oh-my-zsh
       android-tools
-      nixpkgs-fmt
+      nixfmt-rfc-style
 
       # switch to unstable later
       google-chrome
