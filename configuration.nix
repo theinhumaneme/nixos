@@ -16,6 +16,7 @@
     "quiet"
     "splash"
     "amdgpu.abmlevel=0"
+    "rcutree.enable_rcu_lazy=1"
   ];
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
