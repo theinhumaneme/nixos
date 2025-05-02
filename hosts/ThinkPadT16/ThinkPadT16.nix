@@ -3,6 +3,7 @@
   pkgs,
   pkgsUnstable,
   userName,
+  enableDocker,
   ...
 }:
 {
@@ -53,7 +54,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Virtualization for Docker
-  virtualisation.docker.enable = true;
+  virtualisation.docker.enable = enableDocker;
 
   # Networking
   networking.hostName = "ThinkPadT16";

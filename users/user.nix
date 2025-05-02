@@ -1,8 +1,13 @@
 {
+  lib,
   config,
   pkgs,
   pkgsUnstable,
   userName,
+  enableDevTools,
+  enableDocker,
+  enableJava,
+  enableNodeJs,
   ...
 }:
 {
@@ -13,7 +18,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
-      ];
+      ] ++ lib.optionals enableDocker [ "docker" ];
 
       packages =
         with pkgs;
@@ -26,21 +31,32 @@
           nixfmt-rfc-style
           gnomeExtensions.dash2dock-lite
           gnomeExtensions.blur-my-shell
-          docker_28
         ]
         ++ (with pkgsUnstable; [
           google-chrome
           obsidian
-          zed-editor
-          vscode-fhs
-          github-desktop
           spotify
           aria
           mpv
-          lazygit
-          docker-compose
-          docker-buildx
 
+        ])
+        ++ (lib.optionals enableDevTools [
+          # pkgsUnstable.zed-editor
+          pkgsUnstable.vscode-fhs
+          pkgsUnstable.github-desktop
+          pkgsUnstable.lazygit
+        ])
+        ++ (lib.optionals enableDocker [
+          docker_28
+          pkgsUnstable.docker-compose
+          pkgsUnstable.docker-buildx
+        ])
+        ++ (lib.optionals enableJava [
+          jdk
+          maven
+        ])
+        ++ (lib.optionals enableNodeJs [
+          nodejs_22
         ]);
     };
   };
