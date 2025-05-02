@@ -20,9 +20,6 @@
         [
           git
           gnome-power-manager
-          gnome-tweaks
-          zsh
-          oh-my-zsh
           android-tools
           nixfmt-rfc-style
           gnomeExtensions.dash2dock-lite
