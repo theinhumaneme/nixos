@@ -87,6 +87,7 @@
     ];
     packages = with pkgs; [
       google-chrome
+      android-tools
       lazygit
       vscode-fhs
       nixfmt-rfc-style
