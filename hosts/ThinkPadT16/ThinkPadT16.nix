@@ -13,9 +13,9 @@ in
 {
   _module.args = {
     inherit userName enableChromeTmpfs enableDocker;
-    enableDevTools = true;
-    enableJava = false;
-    enableNodeJs = false;
+    enableDevApps = true;
+    enableJavaTooling = false;
+    enableNodeJsTooling = false;
     enableCTooling = true;
   };
 

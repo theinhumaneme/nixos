@@ -4,10 +4,10 @@
   pkgs,
   pkgsUnstable,
   userName,
-  enableDevTools,
+  enableDevApps,
   enableDocker,
-  enableJava,
-  enableNodeJs,
+  enableJavaTooling,
+  enableNodeJsTooling,
   enableCTooling,
   ...
 }:
@@ -42,7 +42,7 @@
           mpv
           power-profiles-daemon
         ])
-        ++ (lib.optionals enableDevTools [
+        ++ (lib.optionals enableDevApps [
           # pkgsUnstable.zed-editor
           pkgsUnstable.vscode-fhs
           pkgsUnstable.github-desktop
@@ -54,11 +54,11 @@
           pkgsUnstable.docker-compose
           pkgsUnstable.docker-buildx
         ])
-        ++ (lib.optionals enableJava [
+        ++ (lib.optionals enableJavaTooling [
           jdk
           maven
         ])
-        ++ (lib.optionals enableNodeJs [
+        ++ (lib.optionals enableNodeJsTooling [
           nodejs_22
         ])
         ++ (lib.optionals enableCTooling [
