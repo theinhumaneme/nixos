@@ -88,6 +88,10 @@
     })
   ];
 
+  # Install firefox.
+  programs = {
+    firefox.enable = false;
+  };
   services = {
     syncthing = {
       enable = true;

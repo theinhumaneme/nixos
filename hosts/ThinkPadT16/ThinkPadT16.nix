@@ -109,9 +109,6 @@ in
     #media-session.enable = true;
   };
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
   environment.systemPackages = with pkgs; [
 
   ];
