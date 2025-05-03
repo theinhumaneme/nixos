@@ -28,6 +28,7 @@
           btop-rocm
           gnome-power-manager
           android-tools
+          stow
           nixfmt-rfc-style
           gnomeExtensions.dash2dock-lite
           gnomeExtensions.blur-my-shell
