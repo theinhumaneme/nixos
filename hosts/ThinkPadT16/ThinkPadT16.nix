@@ -61,7 +61,7 @@ in
     "rcutree.enable_rcu_lazy=1"
     "nowatchdog"
   ];
-  boot.loader.timeout = 0;
+  boot.loader.timeout = 1;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
