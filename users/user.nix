@@ -9,6 +9,7 @@
   enableJavaTooling,
   enableNodeJsTooling,
   enableCTooling,
+  enableRustTooling,
   ...
 }:
 {
@@ -67,6 +68,13 @@
           cmake
           gnumake
           ninja
+        ])
+        ++ (lib.optionals enableRustTooling [
+          pkgsUnstable.rustc
+          pkgsUnstable.cargo
+          pkgsUnstable.rust-analyzer
+          pkgsUnstable.clippy
+          pkgsUnstable.rustfmt
         ]);
     };
   };

@@ -17,6 +17,7 @@ in
     enableJavaTooling = false;
     enableNodeJsTooling = false;
     enableCTooling = true;
+    enableRustTooling = true;
   };
 
   imports = [
