@@ -3,12 +3,21 @@
   lib,
   pkgs,
   pkgsUnstable,
-  userName,
-  enableDocker,
-  enableChromeTmpfs,
   ...
 }:
+let
+  userName = "kalyanm";
+  enableChromeTmpfs = true;
+  enableDocker = false;
+in
 {
+  _module.args = {
+    inherit userName enableChromeTmpfs enableDocker;
+    enableDevTools = true;
+    enableJava = false;
+    enableNodeJs = false;
+  };
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix

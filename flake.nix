@@ -37,12 +37,6 @@
           inherit system;
           specialArgs = {
             inherit pkgs pkgsUnstable;
-            userName = "kalyanm";
-            enableChromeTmpfs = true;
-            enableDevTools = true;
-            enableDocker = false; # Enable Docker Related Configuration
-            enableJava = false; # Enable Java Related Configuration
-            enableNodeJs = false; # Enable Node Related Configuration
           };
           modules = [
             ./hosts/ThinkPadT16/ThinkPadT16.nix
