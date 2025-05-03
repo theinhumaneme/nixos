@@ -27,9 +27,12 @@
   ];
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services = {
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+    gnome.gnome-remote-desktop.enable = false;
   };
   services.xserver.excludePackages = [ pkgs.xterm ];
 }
