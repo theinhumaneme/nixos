@@ -46,6 +46,7 @@
           pkgsUnstable.vscode-fhs
           pkgsUnstable.github-desktop
           pkgsUnstable.lazygit
+          pkgsUnstable.neovim
         ])
         ++ (lib.optionals enableDocker [
           docker_28
