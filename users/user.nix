@@ -79,6 +79,15 @@
     };
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "JetBrainsMono"
+      ];
+    })
+  ];
+
   services = {
     syncthing = {
       enable = true;
