@@ -23,6 +23,7 @@
     gnome-weather
     gnome-connections
     gnome-tour
+    gnome-online-accounts
   ];
 
   # Configure keymap in X11
