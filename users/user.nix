@@ -8,6 +8,7 @@
   enableDocker,
   enableJava,
   enableNodeJs,
+  enableCTooling,
   ...
 }:
 {
@@ -40,7 +41,6 @@
           aria
           mpv
           power-profiles-daemon
-
         ])
         ++ (lib.optionals enableDevTools [
           # pkgsUnstable.zed-editor
@@ -60,6 +60,13 @@
         ])
         ++ (lib.optionals enableNodeJs [
           nodejs_22
+        ])
+        ++ (lib.optionals enableCTooling [
+          gcc
+          clang
+          cmake
+          gnumake
+          ninja
         ]);
     };
   };

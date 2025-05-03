@@ -16,6 +16,7 @@ in
     enableDevTools = true;
     enableJava = false;
     enableNodeJs = false;
+    enableCTooling = true;
   };
 
   imports = [
