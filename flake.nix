@@ -38,6 +38,7 @@
           specialArgs = {
             inherit pkgs pkgsUnstable;
             userName = "kalyanm";
+            enableChromeTmpfs = true;
             enableDevTools = true;
             enableDocker = false; # Enable Docker Related Configuration
             enableJava = false; # Enable Java Related Configuration

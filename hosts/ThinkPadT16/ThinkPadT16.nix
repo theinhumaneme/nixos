@@ -1,9 +1,11 @@
 {
   config,
+  lib,
   pkgs,
   pkgsUnstable,
   userName,
   enableDocker,
+  enableChromeTmpfs,
   ...
 }:
 {
@@ -12,7 +14,7 @@
     ./hardware-configuration.nix
     ../../users/user.nix
     ../../modules/gnome.nix
-  ];
+  ] ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ]; # google-chrome cache in tmpfs;
 
   nix.settings = {
     auto-optimise-store = true;
