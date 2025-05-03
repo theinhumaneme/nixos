@@ -22,6 +22,8 @@
         "wheel"
       ] ++ lib.optionals enableDocker [ "docker" ];
 
+      shell = pkgsUnstable.fish;
+
       packages =
         with pkgs;
         [
@@ -91,6 +93,10 @@
   # Install firefox.
   programs = {
     firefox.enable = false;
+    fish = {
+      enable = true;
+      promptInit = "fastfetch";
+    };
   };
   services = {
     syncthing = {
