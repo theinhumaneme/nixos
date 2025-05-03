@@ -44,6 +44,8 @@
           aria
           mpv
           power-profiles-daemon
+          fastfetch
+          tmux
         ])
         ++ (lib.optionals enableDevApps [
           # pkgsUnstable.zed-editor
