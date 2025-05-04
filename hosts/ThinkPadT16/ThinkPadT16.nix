@@ -9,14 +9,14 @@ let
   userName = "kalyanm";
   enableChromeTmpfs = true;
   enableDocker = false;
+  enableCTooling = true;
 in
 {
   _module.args = {
-    inherit userName enableChromeTmpfs enableDocker;
+    inherit userName enableDocker enableCTooling;
     enableDevApps = true;
     enableJavaTooling = false;
     enableNodeJsTooling = false;
-    enableCTooling = true;
     enableRustTooling = true;
   };
 
@@ -29,8 +29,9 @@ in
       ../../modules/sysctl-config.nix
       ../../modules/fish.nix
     ]
-    ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ]
-    ++ lib.optionals enableDocker [ ../../modules/docker.nix ]; # google-chrome cache in tmpfs;
+    ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
+    ++ lib.optionals enableDocker [ ../../modules/docker.nix ]
+    ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
 
   nix.settings = {
     auto-optimise-store = true;

@@ -7,7 +7,6 @@
   enableDevApps,
   enableJavaTooling,
   enableNodeJsTooling,
-  enableCTooling,
   enableRustTooling,
   ...
 }:
@@ -57,13 +56,6 @@
         ])
         ++ (lib.optionals enableNodeJsTooling [
           nodejs_22
-        ])
-        ++ (lib.optionals enableCTooling [
-          gcc
-          clang
-          cmake
-          gnumake
-          ninja
         ])
         ++ (lib.optionals enableRustTooling [
           pkgsUnstable.rustc
