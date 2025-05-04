@@ -26,6 +26,7 @@ in
     ../../users/user.nix
     ../../modules/gnome.nix
     ../../modules/sysctl-config.nix
+    ../../modules/fish.nix
   ] ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ]; # google-chrome cache in tmpfs;
 
   nix.settings = {
