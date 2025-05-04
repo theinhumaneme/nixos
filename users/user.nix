@@ -5,7 +5,6 @@
   pkgsUnstable,
   userName,
   enableDevApps,
-  enableRustTooling,
   ...
 }:
 {
@@ -47,13 +46,6 @@
           pkgsUnstable.github-desktop
           pkgsUnstable.lazygit
           pkgsUnstable.neovim
-        ])
-        ++ (lib.optionals enableRustTooling [
-          pkgsUnstable.rustc
-          pkgsUnstable.cargo
-          pkgsUnstable.rust-analyzer
-          pkgsUnstable.clippy
-          pkgsUnstable.rustfmt
         ]);
     };
   };
