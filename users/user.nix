@@ -5,7 +5,6 @@
   pkgsUnstable,
   userName,
   enableDevApps,
-  enableNodeJsTooling,
   enableRustTooling,
   ...
 }:
@@ -48,9 +47,6 @@
           pkgsUnstable.github-desktop
           pkgsUnstable.lazygit
           pkgsUnstable.neovim
-        ])
-        ++ (lib.optionals enableNodeJsTooling [
-          nodejs_22
         ])
         ++ (lib.optionals enableRustTooling [
           pkgsUnstable.rustc

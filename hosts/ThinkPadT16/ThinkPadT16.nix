@@ -11,6 +11,7 @@ let
   enableDocker = false;
   enableCTooling = true;
   enableJavaTooling = false;
+  enableNodeJsTooling = false;
 in
 {
   _module.args = {
@@ -19,9 +20,9 @@ in
       enableDocker
       enableCTooling
       enableJavaTooling
+      enableNodeJsTooling
       ;
     enableDevApps = true;
-    enableNodeJsTooling = false;
     enableRustTooling = true;
   };
 
@@ -38,6 +39,7 @@ in
     ++ lib.optionals enableDocker [ ../../modules/docker.nix ]
     ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
+    ++ lib.optionals enableNodeJsTooling [ ../../modules/nodejs.nix ]
 
   nix.settings = {
     auto-optimise-store = true;
