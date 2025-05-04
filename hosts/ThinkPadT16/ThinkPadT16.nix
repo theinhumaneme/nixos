@@ -10,12 +10,17 @@ let
   enableChromeTmpfs = true;
   enableDocker = false;
   enableCTooling = true;
+  enableJavaTooling = false;
 in
 {
   _module.args = {
-    inherit userName enableDocker enableCTooling;
+    inherit
+      userName
+      enableDocker
+      enableCTooling
+      enableJavaTooling
+      ;
     enableDevApps = true;
-    enableJavaTooling = false;
     enableNodeJsTooling = false;
     enableRustTooling = true;
   };
@@ -32,6 +37,7 @@ in
     ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
     ++ lib.optionals enableDocker [ ../../modules/docker.nix ]
     ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
+    ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
 
   nix.settings = {
     auto-optimise-store = true;

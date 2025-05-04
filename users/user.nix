@@ -5,7 +5,6 @@
   pkgsUnstable,
   userName,
   enableDevApps,
-  enableJavaTooling,
   enableNodeJsTooling,
   enableRustTooling,
   ...
@@ -49,10 +48,6 @@
           pkgsUnstable.github-desktop
           pkgsUnstable.lazygit
           pkgsUnstable.neovim
-        ])
-        ++ (lib.optionals enableJavaTooling [
-          jdk
-          maven
         ])
         ++ (lib.optionals enableNodeJsTooling [
           nodejs_22
