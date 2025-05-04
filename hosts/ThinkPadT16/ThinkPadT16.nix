@@ -20,14 +20,17 @@ in
     enableRustTooling = true;
   };
 
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ../../users/user.nix
-    ../../modules/gnome.nix
-    ../../modules/sysctl-config.nix
-    ../../modules/fish.nix
-  ] ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ]; # google-chrome cache in tmpfs;
+  imports =
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ../../users/user.nix
+      ../../modules/gnome.nix
+      ../../modules/sysctl-config.nix
+      ../../modules/fish.nix
+    ]
+    ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ]
+    ++ lib.optionals enableDocker [ ../../modules/docker.nix ]; # google-chrome cache in tmpfs;
 
   nix.settings = {
     auto-optimise-store = true;
@@ -73,9 +76,6 @@ in
   boot.loader.timeout = 1;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # Virtualization for Docker
-  virtualisation.docker.enable = enableDocker;
 
   # Networking
   networking.hostName = "ThinkPadT16";

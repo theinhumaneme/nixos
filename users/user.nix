@@ -5,7 +5,6 @@
   pkgsUnstable,
   userName,
   enableDevApps,
-  enableDocker,
   enableJavaTooling,
   enableNodeJsTooling,
   enableCTooling,
@@ -20,7 +19,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
-      ] ++ lib.optionals enableDocker [ "docker" ];
+      ];
 
       packages =
         with pkgs;
@@ -51,11 +50,6 @@
           pkgsUnstable.github-desktop
           pkgsUnstable.lazygit
           pkgsUnstable.neovim
-        ])
-        ++ (lib.optionals enableDocker [
-          docker_28
-          pkgsUnstable.docker-compose
-          pkgsUnstable.docker-buildx
         ])
         ++ (lib.optionals enableJavaTooling [
           jdk
