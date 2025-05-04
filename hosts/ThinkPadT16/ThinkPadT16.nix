@@ -13,6 +13,7 @@ let
   enableJavaTooling = false;
   enableNodeJsTooling = false;
   enableRustTooling = true;
+  enableDevTools = true;
 in
 {
   _module.args = {
@@ -23,8 +24,9 @@ in
       enableJavaTooling
       enableNodeJsTooling
       enableRustTooling
+      enableDevTools
       ;
-    enableDevApps = true;
+
   };
 
   imports =
@@ -41,7 +43,8 @@ in
     ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/nodejs.nix ]
-    ++ lib.optionals enableRustTooling [ ../../modules/rust.nix ];
+    ++ lib.optionals enableRustTooling [ ../../modules/rust.nix ]
+    ++ lib.optionals enableDevTools [ ../../modules/commonDevTools.nix ];
 
   nix.settings = {
     auto-optimise-store = true;

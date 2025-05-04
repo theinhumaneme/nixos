@@ -4,7 +4,6 @@
   pkgs,
   pkgsUnstable,
   userName,
-  enableDevApps,
   ...
 }:
 {
@@ -39,13 +38,6 @@
           power-profiles-daemon
           fastfetch
           tmux
-        ])
-        ++ (lib.optionals enableDevApps [
-          # pkgsUnstable.zed-editor
-          pkgsUnstable.vscode-fhs
-          pkgsUnstable.github-desktop
-          pkgsUnstable.lazygit
-          pkgsUnstable.neovim
         ]);
     };
   };
