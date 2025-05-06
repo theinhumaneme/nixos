@@ -100,6 +100,16 @@ in
     "2606:4700:4700::1001#one.one.one.one"
   ];
 
+  services.resolved = {
+    enable = true;
+    dnsovertls = "true";
+    dnssec = "true";
+    fallbackDns = [
+      "8.8.8.8"
+      "2001:4860:4860::8844"
+    ];
+  };
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = userName;
