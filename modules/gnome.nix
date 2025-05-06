@@ -6,8 +6,18 @@
 }:
 {
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
+  # Configure keymap in X11
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      excludePackages = [ pkgs.xterm ];
+    };
+    gnome.gnome-remote-desktop.enable = false; # disable gnome-remote-desktop service
+  };
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -33,15 +43,7 @@
 
   users.users."${userName}".packages = with pkgs; [
     gnome-tweaks
+    gnomeExtensions.dash2dock-lite
+    gnomeExtensions.blur-my-shell
   ];
-
-  # Configure keymap in X11
-  services = {
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-    gnome.gnome-remote-desktop.enable = false;
-  };
-  services.xserver.excludePackages = [ pkgs.xterm ];
 }
