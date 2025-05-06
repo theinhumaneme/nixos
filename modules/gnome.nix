@@ -4,22 +4,14 @@
   ...
 }:
 {
-  # Enable the X11 windowing system.
-  # Configure keymap in X11
   services = {
     xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-      excludePackages = [ pkgs.xterm ];
+      displayManager.gdm.enable = true; # enable gdm to use wayland
+      displayManager.gdm.wayland = true; # configure gdm to use wayland
+      desktopManager.gnome.enable = true; # enable gnome
     };
     gnome.gnome-remote-desktop.enable = false; # disable gnome-remote-desktop service
   };
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   environment.gnome.excludePackages = with pkgs; [
     epiphany # web browser
