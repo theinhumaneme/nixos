@@ -37,5 +37,6 @@
     gnomeExtensions.dash2dock-lite
     gnomeExtensions.blur-my-shell
     papirus-icon-theme
+    banana-cursor
   ];
 }
