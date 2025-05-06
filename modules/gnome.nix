@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  userName,
+  ...
+}:
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -24,6 +29,10 @@
     gnome-connections
     gnome-tour
     gnome-online-accounts
+  ];
+
+  users.users."${userName}".packages = with pkgs; [
+    gnome-tweaks
   ];
 
   # Configure keymap in X11
