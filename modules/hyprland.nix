@@ -1,8 +1,5 @@
 {
-  config,
-  lib,
   pkgs,
-  pkgsUnstable,
   userName,
   ...
 }:
