@@ -93,6 +93,7 @@ in
   networking.hostName = "ThinkPadT16";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
+  networking.firewall.checkReversePath = false;
   networking.nameservers = [
     "1.1.1.1#one.one.one.one"
     "1.0.0.1#one.one.one.one"
