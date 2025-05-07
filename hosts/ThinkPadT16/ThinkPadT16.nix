@@ -152,6 +152,7 @@ in
   environment.systemPackages = with pkgs; [
     mesa-demos
     vulkan-tools
+    busybox
 
   ];
 
