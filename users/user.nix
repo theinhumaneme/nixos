@@ -26,6 +26,7 @@
           stow
           nixfmt-rfc-style
           nixd
+          wireguard-tools
         ]
         ++ (with pkgsUnstable; [
           google-chrome
