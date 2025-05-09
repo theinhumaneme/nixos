@@ -12,6 +12,7 @@ let
   enableNodeJsTooling = false;
   enableRustTooling = true;
   enableDevTools = true;
+  enableAutoCpuFreq = false;
 in
 {
   _module.args = {
@@ -42,7 +43,8 @@ in
     ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/nodejs.nix ]
     ++ lib.optionals enableRustTooling [ ../../modules/rust.nix ]
-    ++ lib.optionals enableDevTools [ ../../modules/commonDevTools.nix ];
+    ++ lib.optionals enableDevTools [ ../../modules/commonDevTools.nix ]
+    ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ];
 
   nix.settings = {
     auto-optimise-store = true;
