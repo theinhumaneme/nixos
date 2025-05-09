@@ -42,13 +42,9 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "JetBrainsMono"
-      ];
-    })
+  fonts.packages = with pkgsUnstable; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
   ];
 
   # Install firefox.
