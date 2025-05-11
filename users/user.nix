@@ -26,6 +26,7 @@
           stow
           nixfmt-rfc-style
           nixd
+          nil
           wireguard-tools
         ]
         ++ (with pkgsUnstable; [
