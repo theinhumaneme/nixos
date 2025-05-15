@@ -38,5 +38,6 @@
     gnomeExtensions.blur-my-shell
     papirus-icon-theme
     banana-cursor
+    gnome-firmware
   ];
 }
