@@ -42,6 +42,7 @@
           newsflash
           brave
           steam
+          syncthing
         ]);
     };
   };
