@@ -26,10 +26,8 @@
     gnome-maps
     gnome-music
     gnome-photos
-    gnome-weather
     gnome-connections
     gnome-tour
-    gnome-online-accounts
   ];
 
   users.users."${userName}".packages = with pkgs; [
