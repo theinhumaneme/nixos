@@ -40,6 +40,7 @@
           tmux
           transmission_4-gtk
           newsflash
+          steam
         ]);
     };
   };
