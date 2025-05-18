@@ -37,7 +37,7 @@ in
       ../../modules/sysctl-config.nix
       ../../modules/fish.nix
     ]
-    ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
+    ++ lib.optionals enableChromeTmpfs [ ../../modules/cache-tmpfs.nix ] # google-chrome cache in tmpfs;
     ++ lib.optionals enableDocker [ ../../modules/docker.nix ]
     ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
