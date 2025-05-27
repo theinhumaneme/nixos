@@ -51,5 +51,8 @@
 
     # Network
     "net.ipv4.tcp_congestion_control" = "bbr";
+
+    # https://wiki.cachyos.org/configuration/general_system_tweaks/#disabling-split-lock-mitigate
+    "kernel.split_lock_mitigate" = 0;
   };
 }
