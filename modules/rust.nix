@@ -13,6 +13,7 @@
       pkgsUnstable.rust-analyzer
       pkgsUnstable.clippy
       pkgsUnstable.rustfmt
+      pkgsUnstable.cargo-bump
     ]
   );
 }
