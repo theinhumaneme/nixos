@@ -12,6 +12,8 @@
       # pkgsUnstable.vscode-fhs
       pkgsUnstable.github-desktop
       pkgsUnstable.lazygit
+      pkgsUnstable.dbeaver-bin
+      pkgsUnstable.bruno
     ]
   );
 }
