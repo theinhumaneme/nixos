@@ -34,6 +34,8 @@
     gnome-tweaks
     gnomeExtensions.dash2dock-lite
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.vitals
+    gnomeExtensions.clipboard-history
     papirus-icon-theme
     banana-cursor
     gnome-firmware
