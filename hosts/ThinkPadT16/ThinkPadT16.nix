@@ -6,7 +6,7 @@
 let
   userName = "kalyanm";
   enableChromeTmpfs = true;
-  enableDocker = false;
+  enableDocker = true;
   enableCTooling = true;
   enableJavaTooling = false;
   enableNodeJsTooling = false;
