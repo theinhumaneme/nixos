@@ -39,5 +39,6 @@
     papirus-icon-theme
     banana-cursor
     gnome-firmware
+    papers
   ];
 }
