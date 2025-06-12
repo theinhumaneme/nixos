@@ -12,7 +12,7 @@ let
   enableNodeJsTooling = false;
   enableRustTooling = true;
   enableDevTools = true;
-  enableAutoCpuFreq = false;
+  enableAutoCpuFreq = true;
 in
 {
   _module.args = {
