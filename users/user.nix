@@ -42,6 +42,7 @@
           newsflash
           steam
           syncthing
+          telegram-desktop
         ]);
     };
   };
