@@ -13,7 +13,7 @@
       pkgsUnstable.github-desktop
       pkgsUnstable.lazygit
       pkgsUnstable.dbeaver-bin
-      pkgsUnstable.bruno
+      pkgsUnstable.postman
     ]
   );
 }
