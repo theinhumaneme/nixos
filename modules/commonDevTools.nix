@@ -9,11 +9,11 @@
   users.users."${userName}".packages = (
     lib.optionals enableDevTools [
       pkgsUnstable.zed-editor-fhs
-      # pkgsUnstable.vscode-fhs
-      pkgsUnstable.github-desktop
       pkgsUnstable.lazygit
-      pkgsUnstable.dbeaver-bin
-      pkgsUnstable.postman
+      # pkgsUnstable.dbeaver-bin
+      # pkgsUnstable.postman
+      # pkgsUnstable.github-desktop
+      # pkgsUnstable.vscode-fhs
     ]
   );
 }
