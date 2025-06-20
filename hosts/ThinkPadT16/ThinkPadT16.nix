@@ -6,13 +6,13 @@
 let
   userName = "kalyanm";
   enableChromeTmpfs = true;
-  enableDocker = true;
+  enableDocker = false;
   enableCTooling = true;
   enableJavaTooling = false;
   enableNodeJsTooling = false;
-  enableRustTooling = true;
+  enableRustTooling = false;
   enableDevTools = true;
-  enableAutoCpuFreq = true;
+  enableAutoCpuFreq = false;
 in
 {
   _module.args = {
