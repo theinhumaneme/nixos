@@ -36,9 +36,10 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.vitals
     gnomeExtensions.clipboard-history
-    papirus-icon-theme
     banana-cursor
     gnome-firmware
     papers
+    bibata-cursors
+    tela-icon-theme
   ];
 }
