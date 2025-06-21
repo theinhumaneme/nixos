@@ -43,6 +43,8 @@
           steam
           syncthing
           telegram-desktop
+          stremio
+          jellyfin-media-player
         ]);
     };
   };
