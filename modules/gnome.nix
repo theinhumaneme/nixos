@@ -41,5 +41,6 @@
     papers
     bibata-cursors
     tela-icon-theme
+    foliate
   ];
 }
