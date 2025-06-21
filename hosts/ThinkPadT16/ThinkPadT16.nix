@@ -139,6 +139,9 @@ in
 
   hardware.graphics.enable = true;
 
+  # Disable Bluetooth Autostart
+  hardware.bluetooth.powerOnBoot = false;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
