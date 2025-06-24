@@ -37,9 +37,7 @@
           mpv
           power-profiles-daemon
           fastfetch
-          tmux
           transmission_4-gtk
-          newsflash
           steam
           syncthing
           telegram-desktop
