@@ -5,11 +5,9 @@
 }:
 {
   services = {
-    xserver = {
-      displayManager.gdm.enable = true; # enable gdm to use wayland
-      displayManager.gdm.wayland = true; # configure gdm to use wayland
-      desktopManager.gnome.enable = true; # enable gnome
-    };
+    displayManager.gdm.enable = true; # enable gdm to use wayland
+    displayManager.gdm.wayland = true; # configure gdm to use wayland
+    desktopManager.gnome.enable = true; # enable gnome
     gnome.gnome-remote-desktop.enable = false; # disable gnome-remote-desktop service
   };
 
