@@ -47,6 +47,16 @@
     };
   };
 
+  fonts = {
+    fontconfig = {
+      enable = true;
+      subpixel.rgba = "rgb";
+      hinting.autohint = true;
+      hinting.enable = true;
+      subpixel.lcdfilter = "light";
+    };
+  };
+
   fonts.packages = with pkgsUnstable; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
