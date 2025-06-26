@@ -79,7 +79,7 @@ in
   };
 
   # Bootloader and Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.kernelParams = [
     "quiet"
     "splash"
@@ -138,6 +138,7 @@ in
   };
 
   hardware.graphics.enable = true;
+  chaotic.mesa-git.enable = true;
 
   # Disable Bluetooth Autostart
   hardware.bluetooth.powerOnBoot = false;
