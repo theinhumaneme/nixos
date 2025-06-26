@@ -2,6 +2,7 @@
   pkgs,
   pkgsUnstable,
   userName,
+  zen-browser,
   ...
 }:
 {
@@ -43,7 +44,8 @@
           telegram-desktop
           stremio
           jellyfin-media-player
-        ]);
+        ])
+        ++ [ zen-browser.packages."${system}".default ];
     };
   };
 
