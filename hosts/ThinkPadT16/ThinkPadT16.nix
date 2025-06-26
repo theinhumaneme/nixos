@@ -167,6 +167,10 @@ in
     vulkan-tools
     busybox
     fwupd
+    pciutils
+    usbutils
+    lm_sensors
+    smartmontools
   ];
   services.fwupd.enable = true;
 
