@@ -26,19 +26,30 @@
     gnome-photos
     gnome-connections
     gnome-tour
+    decibels
+    gnome-system-monitor
+    seahorse
+    gnome-font-viewer
   ];
 
-  users.users."${userName}".packages = with pkgs; [
-    gnome-tweaks
-    gnomeExtensions.dash2dock-lite
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.vitals
-    gnomeExtensions.clipboard-history
-    banana-cursor
-    gnome-firmware
-    papers
-    bibata-cursors
-    tela-icon-theme
-    foliate
-  ];
+  users.users."${userName}".packages =
+    # Apps
+    with pkgs;
+    [
+      gnome-firmware
+      foliate
+      collision
+      curtail
+      resources
+    ]
+    # Customization and Tweaks
+    ++ (with pkgs; [
+      # gnome-gnome-tweaks
+      # gnomeExtensions.dash2dock-lite
+      # gnomeExtensions.blur-my-shell
+      # gnomeExtensions.vitals
+      # gnomeExtensions.clipboard-history
+      # bibata-cursors
+      # papirus-icon-theme
+    ]);
 }
