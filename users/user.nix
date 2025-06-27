@@ -81,4 +81,5 @@
       configDir = "/home/${userName}/.config/syncthing"; # Folder for Syncthing's settings and keys
     };
   };
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true"; # Don't create default ~/Sync folder
 }
