@@ -30,6 +30,7 @@
     gnome-system-monitor
     seahorse
     gnome-font-viewer
+    gnome-console
   ];
 
   users.users."${userName}".packages =
@@ -41,6 +42,7 @@
       collision
       curtail
       resources
+      ptyxis
     ]
     # Customization and Tweaks
     ++ (with pkgs; [
