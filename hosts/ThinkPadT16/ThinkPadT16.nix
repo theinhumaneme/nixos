@@ -54,6 +54,7 @@ in
       "nix-command"
       "flakes"
     ];
+    lazy-trees = true;
   };
 
   nix.gc = {
