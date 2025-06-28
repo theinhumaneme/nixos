@@ -14,6 +14,10 @@
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    determinate = {
+      url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
   outputs =
@@ -24,6 +28,7 @@
       nixpkgsUnstable,
       chaotic,
       zen-browser,
+      determinate,
       ...
     }@inputs:
     let
@@ -58,6 +63,8 @@
               }
             )
             chaotic.nixosModules.default
+            # Load the Determinate module
+            determinate.nixosModules.default
           ];
         };
       };
