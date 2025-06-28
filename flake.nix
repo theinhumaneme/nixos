@@ -5,7 +5,10 @@
 
     # should be same as stable
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgsStable = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+      follows = "nixpkgs";
+    };
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     zen-browser = {
