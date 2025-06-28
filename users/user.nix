@@ -31,7 +31,6 @@
           wireguard-tools
         ]
         ++ (with pkgsUnstable; [
-          google-chrome
           obsidian
           spotify
           aria

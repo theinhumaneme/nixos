@@ -5,7 +5,7 @@
 }:
 let
   userName = "kalyanm";
-  enableChromeTmpfs = true;
+  enableChromeTmpfs = false;
   enableFirefoxTmpfs = true;
   enableZenTmpfs = false;
   enableDocker = false;
