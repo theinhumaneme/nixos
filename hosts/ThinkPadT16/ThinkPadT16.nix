@@ -39,7 +39,7 @@ in
       ../../modules/fish.nix
     ]
     ++ lib.optionals enableChromeTmpfs [ ../../modules/chome-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
-    ++ lib.optionals enableZenTmpfs [ ../../modules/zen-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
+    ++ lib.optionals enableZenTmpfs [ ../../modules/zen-cache-tmpfs.nix ] # zen-browser cache in tmpfs;
     ++ lib.optionals enableDocker [ ../../modules/docker.nix ]
     ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
@@ -89,7 +89,7 @@ in
     "rcutree.enable_rcu_lazy=1"
     "nowatchdog"
   ];
-  boot.loader.timeout = 1;
+  boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -140,6 +140,8 @@ in
   };
 
   hardware.graphics.enable = true;
+
+  # enable Chaotic NYX beelding edge Mesa Drivers
   chaotic.mesa-git.enable = true;
 
   # Disable Bluetooth Autostart

@@ -3,25 +3,41 @@
 
   inputs = {
 
-    # should be same as stable
+    # Stable Channel
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgsStable = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
       follows = "nixpkgs";
     };
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # Additonal Flake Config
+    #
+    # Chaotic Nyx
+    # URL - https://www.nyx.chaotic.cx/
+    # For CachyOS Kernel
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
+    #
+    # Zen Browser Flake
+    # URL - https://github.com/0xc000022070/zen-browser-flake
+    # For Zen Browser
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
+    #
+    # Determinate Nix Flake
+    # URL - https://docs.determinate.systems/
+    # For Determinate Nix
+    # Faster Parallel Execution
+    # Lazy Tree Evalution
     determinate = {
       url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+      # Follow the Stable Channel
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -75,5 +91,4 @@
         };
       };
     };
-
 }
