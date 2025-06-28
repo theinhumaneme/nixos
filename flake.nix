@@ -23,12 +23,12 @@
     # Zen Browser Flake
     # URL - https://github.com/0xc000022070/zen-browser-flake
     # For Zen Browser
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-      # to have it up-to-date or simply don't specify the nixpkgs input
-      inputs.nixpkgs.follows = "nixpkgsUnstable";
-    };
+    # zen-browser = {
+    #   url = "github:0xc000022070/zen-browser-flake";
+    #   # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+    #   # to have it up-to-date or simply don't specify the nixpkgs input
+    #   inputs.nixpkgs.follows = "nixpkgsUnstable";
+    # };
     #
     # Determinate Nix Flake
     # URL - https://docs.determinate.systems/
@@ -49,7 +49,7 @@
       nixpkgsStable,
       nixpkgsUnstable,
       chaotic,
-      zen-browser,
+      # zen-browser,
       determinate,
       ...
     }@inputs:
@@ -69,7 +69,7 @@
           specialArgs = {
             inherit pkgsUnstable;
             inherit chaotic;
-            inherit zen-browser;
+            # inherit zen-browser;
             inherit inputs;
           };
           modules = [

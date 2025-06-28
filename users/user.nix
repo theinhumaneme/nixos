@@ -2,7 +2,7 @@
   pkgs,
   pkgsUnstable,
   userName,
-  zen-browser,
+  # zen-browser,
   ...
 }:
 {
@@ -46,7 +46,8 @@
           jellyfin-media-player
           firefox
         ])
-        ++ [ zen-browser.packages."${system}".default ];
+      # ++ [ zen-browser.packages."${system}".default ]
+      ;
     };
   };
 
