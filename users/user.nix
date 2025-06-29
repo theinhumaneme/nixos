@@ -44,6 +44,7 @@
           stremio
           jellyfin-media-player
           firefox
+          discord
         ])
       # ++ [ zen-browser.packages."${system}".default ]
       ;
