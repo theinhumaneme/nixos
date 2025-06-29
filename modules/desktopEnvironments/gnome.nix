@@ -43,6 +43,7 @@
       curtail
       resources
       ptyxis
+      papers
     ]
     # Customization and Tweaks
     ++ (with pkgs; [

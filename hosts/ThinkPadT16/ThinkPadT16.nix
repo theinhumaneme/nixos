@@ -35,19 +35,19 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../users/user.nix
-      ../../modules/gnome.nix
+      ../../modules/desktopEnvironments/gnome.nix
       ../../modules/sysctl-config.nix
-      ../../modules/fish.nix
+      ../../modules/desktopEnvironments/fish.nix
     ]
-    ++ lib.optionals enableChromeTmpfs [ ../../modules/tmpfs-cache/chome-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
-    ++ lib.optionals enableFirefoxTmpfs [ ../../modules/tmpfs-cache/firefox-cache-tmpfs.nix ] # firefox cache in tmpfs;
-    ++ lib.optionals enableZenTmpfs [ ../../modules/tmpfs-cache/zen-cache-tmpfs.nix ] # zen-browser cache in tmpfs;
-    ++ lib.optionals enableDocker [ ../../modules/docker.nix ]
-    ++ lib.optionals enableCTooling [ ../../modules/c.nix ]
-    ++ lib.optionals enableJavaTooling [ ../../modules/java.nix ]
-    ++ lib.optionals enableNodeJsTooling [ ../../modules/nodejs.nix ]
-    ++ lib.optionals enableRustTooling [ ../../modules/rust.nix ]
-    ++ lib.optionals enableDevTools [ ../../modules/commonDevTools.nix ]
+    ++ lib.optionals enableChromeTmpfs [ ../../modules/tmpfsCache/chome-cache-tmpfs.nix ] # google-chrome cache in tmpfs;
+    ++ lib.optionals enableFirefoxTmpfs [ ../../modules/tmpfsCache/firefox-cache-tmpfs.nix ] # firefox cache in tmpfs;
+    ++ lib.optionals enableZenTmpfs [ ../../modules/tmpfsCache/zen-cache-tmpfs.nix ] # zen-browser cache in tmpfs;
+    ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
+    ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
+    ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
+    ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
+    ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
+    ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
     ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ];
 
   nix.settings = {
