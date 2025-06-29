@@ -7,13 +7,17 @@
 }:
 {
   users.users."${userName}".packages = (
-    lib.optionals enableDevTools [
-      pkgsUnstable.zed-editor-fhs
-      pkgsUnstable.lazygit
-      # pkgsUnstable.dbeaver-bin
-      # pkgsUnstable.postman
-      # pkgsUnstable.github-desktop
-      # pkgsUnstable.vscode-fhs
-    ]
+    lib.optionals enableDevTools (
+      with pkgsUnstable;
+      [
+        # zed-editor-fhs
+        lazygit
+        vscode-fhs
+        # dbeaver-bin
+        # postman
+        # github-desktop
+
+      ]
+    )
   );
 }
