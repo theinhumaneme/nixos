@@ -21,7 +21,6 @@
           git
           tree
           openssl
-          btop-rocm
           gnome-power-manager
           android-tools
           stow
