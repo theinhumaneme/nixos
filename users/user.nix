@@ -45,6 +45,7 @@
           jellyfin-media-player
           firefox
           discord
+          zoom-us
         ])
       # ++ [ zen-browser.packages."${system}".default ]
       ;
