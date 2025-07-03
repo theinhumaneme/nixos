@@ -84,8 +84,12 @@ in
   };
 
   # Bootloader and Kernel
-  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.kernelPackages = pkgs.linuxPackages_cachyos-rc;
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
+    extraArgs = [ "--autopower" ];
+  };
 
   boot.kernelParams = [
     "quiet"
