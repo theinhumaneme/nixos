@@ -61,11 +61,6 @@
     };
   };
 
-  fonts.packages = with pkgsUnstable; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-  ];
-
   programs = {
     steam = {
       enable = true;
