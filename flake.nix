@@ -12,12 +12,19 @@
 
     # Additonal Flake Config
     #
+    # Home Manager
+    # For Home Configurations
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Chaotic Nyx
     # URL - https://www.nyx.chaotic.cx/
     # For CachyOS Kernel
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgsUnstable";
+      inputs.home-manager.follows = "home-manager";
     };
     #
     # Zen Browser Flake
@@ -48,6 +55,7 @@
       nixpkgs,
       nixpkgsStable,
       nixpkgsUnstable,
+      home-manager,
       chaotic,
       # zen-browser,
       determinate,
@@ -74,6 +82,7 @@
           };
           modules = [
             ./hosts/ThinkPadT16/ThinkPadT16.nix
+            home-manager.nixosModules.home-manager
             (
               { ... }:
               {
