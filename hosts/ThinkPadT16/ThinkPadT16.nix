@@ -34,7 +34,7 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../users/user.nix
+      ./user.nix
       ../../modules/desktopEnvironments/gnome.nix
       ../../modules/sysctl-config.nix
       ../../modules/desktopEnvironments/fish.nix
