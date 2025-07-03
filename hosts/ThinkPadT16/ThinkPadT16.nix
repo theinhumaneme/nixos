@@ -97,6 +97,7 @@ in
     "amdgpu.abmlevel=0"
     "rcutree.enable_rcu_lazy=1"
     "nowatchdog"
+    "amd_pstate=guided"
   ];
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
