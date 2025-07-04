@@ -11,6 +11,7 @@
       with pkgsUnstable;
       [
         # zed-editor-fhs
+        neovim
         lazygit
         vscode-fhs
         # dbeaver-bin
