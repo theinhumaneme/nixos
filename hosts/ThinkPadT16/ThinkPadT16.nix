@@ -6,8 +6,8 @@
 let
   userName = "kalyanm";
   enableChromeTmpfs = false;
-  enableFirefoxTmpfs = true;
-  enableZenTmpfs = false;
+  enableFirefoxTmpfs = false;
+  enableZenTmpfs = true;
   enableDocker = false;
   enableCTooling = true;
   enableJavaTooling = false;
