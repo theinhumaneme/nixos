@@ -19,7 +19,7 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      monospace-font-name = "FiraCode Nerd Font Mono Medium";
+      monospace-font-name = "FiraCode Nerd Font Mono Medium 11";
     };
   };
 
