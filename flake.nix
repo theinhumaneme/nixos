@@ -35,6 +35,7 @@
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgsUnstable";
+      inputs.home-manager.follows = "home-manager";
     };
     #
     # Determinate Nix Flake
