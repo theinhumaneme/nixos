@@ -48,6 +48,7 @@
       resources # better system-monitor
       ptyxis # latest container-based terminal emulator
       papers # latest document-viewer
+      gradia # screenshot application
     ]
     # Customization and Tweaks
     ++ (with pkgs; [
