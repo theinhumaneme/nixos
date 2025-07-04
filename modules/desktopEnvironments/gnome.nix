@@ -42,12 +42,12 @@
     with pkgs;
     [
       gnome-firmware
-      foliate
-      collision
-      curtail
-      resources
-      ptyxis
-      papers
+      foliate # e-pub reader
+      collision # checksum application
+      curtail # image compression tool
+      resources # better system-monitor
+      ptyxis # latest container-based terminal emulator
+      papers # latest document-viewer
     ]
     # Customization and Tweaks
     ++ (with pkgs; [
