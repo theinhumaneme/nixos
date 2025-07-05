@@ -13,6 +13,7 @@
         # zed-editor-fhs
         neovim
         lazygit
+        ripgrep
         # dbeaver-bin
         # postman
         # github-desktop
