@@ -13,7 +13,6 @@
         # zed-editor-fhs
         neovim
         lazygit
-        vscode-fhs
         # dbeaver-bin
         # postman
         # github-desktop
