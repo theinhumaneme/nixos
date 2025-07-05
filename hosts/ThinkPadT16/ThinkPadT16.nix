@@ -106,6 +106,16 @@ in
   # Networking
   networking.hostName = "ThinkPadT16";
   networking.networkmanager.enable = true;
+  networking.networkmanager.plugins = [
+    pkgs.networkmanager-fortisslvpn
+    pkgs.networkmanager-iodine
+    pkgs.networkmanager-l2tp
+    pkgs.networkmanager-openconnect
+    pkgs.networkmanager-openvpn
+    pkgs.networkmanager-sstp
+    pkgs.networkmanager-strongswan
+    pkgs.networkmanager-vpnc
+  ];
   networking.firewall.enable = true;
   networking.firewall.checkReversePath = false;
   networking.nameservers = [
