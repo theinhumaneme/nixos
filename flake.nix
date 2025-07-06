@@ -48,28 +48,15 @@
     };
 
   };
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nixpkgsStable,
-      nixpkgsUnstable,
-      home-manager,
-      chaotic,
-      zen-browser,
-      determinate,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, nixpkgsStable, nixpkgsUnstable, home-manager
+    , chaotic, zen-browser, determinate, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgsUnstable = import nixpkgsUnstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config = { allowUnfree = true; };
       };
-    in
-    {
+    in {
       nixosConfigurations = {
         ThinkPadT16 = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -82,16 +69,13 @@
           modules = [
             ./hosts/ThinkPadT16/ThinkPadT16.nix
             home-manager.nixosModules.home-manager
-            (
-              { ... }:
-              {
-                nixpkgs = {
-                  inherit system;
-                  # This configures the `pkgs` argument passed to all modules.
-                  config.allowUnfree = true;
-                };
-              }
-            )
+            ({ ... }: {
+              nixpkgs = {
+                inherit system;
+                # This configures the `pkgs` argument passed to all modules.
+                config.allowUnfree = true;
+              };
+            })
             chaotic.nixosModules.default
             # Load the Determinate module
             determinate.nixosModules.default

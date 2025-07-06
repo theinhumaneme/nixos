@@ -1,15 +1,10 @@
-{
-  pkgs,
-  userName,
-  pkgsUnstable,
-  ...
-}:
-{
+{ pkgs, userName, pkgsUnstable, ... }: {
   services = {
     displayManager.gdm.enable = true; # enable gdm to use wayland
     displayManager.gdm.wayland = true; # configure gdm to use wayland
     desktopManager.gnome.enable = true; # enable gnome
-    gnome.gnome-remote-desktop.enable = false; # disable gnome-remote-desktop service
+    gnome.gnome-remote-desktop.enable =
+      false; # disable gnome-remote-desktop service
   };
 
   environment.gnome.excludePackages = with pkgs; [
@@ -34,9 +29,7 @@
     gnome-console
   ];
 
-  fonts.packages = with pkgsUnstable; [
-    nerd-fonts.fira-code
-  ];
+  fonts.packages = with pkgsUnstable; [ nerd-fonts.fira-code ];
   users.users."${userName}".packages =
     # Apps
     with pkgs;
@@ -51,17 +44,17 @@
       gradia # screenshot application
     ]
     # Customization and Tweaks
-    ++ (with pkgs; [
-      # gnome-gnome-tweaks
-      # gnomeExtensions.dash2dock-lite
-      # gnomeExtensions.blur-my-shell
-      # gnomeExtensions.vitals
-      # gnomeExtensions.clipboard-history
-      # bibata-cursors
-      # papirus-icon-theme
-    ]);
+    ++ (with pkgs;
+      [
+        # gnome-gnome-tweaks
+        # gnomeExtensions.dash2dock-lite
+        # gnomeExtensions.blur-my-shell
+        # gnomeExtensions.vitals
+        # gnomeExtensions.clipboard-history
+        # bibata-cursors
+        # papirus-icon-theme
+      ]);
 
-  home-manager.users."${userName}" = import ./home-gnome.nix {
-    inherit pkgs pkgsUnstable;
-  };
+  home-manager.users."${userName}" =
+    import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 }

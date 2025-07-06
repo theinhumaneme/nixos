@@ -1,15 +1,8 @@
-{
-  pkgsUnstable,
-  userName,
-  ...
-}:
-{
+{ pkgsUnstable, userName, ... }: {
 
   users.users."${userName}" = {
 
-    packages = with pkgsUnstable; [
-      auto-cpufreq
-    ];
+    packages = with pkgsUnstable; [ auto-cpufreq ];
   };
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = true;

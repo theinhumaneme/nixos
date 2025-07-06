@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgsUnstable,
-  ...
-}:
+{ pkgs, pkgsUnstable, ... }:
 
 {
   gtk = {
