@@ -14,7 +14,7 @@
     # For Home Configurations
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgsStable";
     };
     # Chaotic Nyx
     # URL - https://www.nyx.chaotic.cx/
