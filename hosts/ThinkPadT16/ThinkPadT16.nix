@@ -73,7 +73,7 @@ in {
   };
 
   # Bootloader and Kernel
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
