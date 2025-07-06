@@ -25,9 +25,6 @@
           gnome-power-manager
           android-tools
           stow
-          nixfmt-rfc-style
-          nixd
-          nil
           wireguard-tools
         ]
         ++ (with pkgsUnstable; [
