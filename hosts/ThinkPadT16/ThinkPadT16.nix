@@ -89,9 +89,14 @@ in {
     "nowatchdog"
     "amd_pstate=guided"
   ];
-  boot.loader.timeout = 0;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    timeout = 0;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 14;
+    };
+    efi.canTouchEfiVariables = true;
+  };
 
   # Networking
   networking.hostName = hostName;
