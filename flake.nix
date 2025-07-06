@@ -5,9 +5,7 @@
 
     # Stable Channel
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgsStable = {
-      follows = "nixpkgs";
-    };
+    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Additonal Flake Config
