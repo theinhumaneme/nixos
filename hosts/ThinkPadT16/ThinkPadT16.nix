@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 let
   userName = "kalyanm";
+  hostName = "ThinkPadT16";
   enableChromeTmpfs = false;
   enableFirefoxTmpfs = false;
   enableZenTmpfs = true;
@@ -93,7 +94,7 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  networking.hostName = "ThinkPadT16";
+  networking.hostName = hostName;
   networking.networkmanager.enable = true;
   networking.networkmanager.plugins = [
     pkgs.networkmanager-fortisslvpn
