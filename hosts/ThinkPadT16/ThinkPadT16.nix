@@ -185,6 +185,7 @@ in {
     usbutils
     lm_sensors
     smartmontools
+    lua-language-server
   ];
   services.fwupd.enable = true;
 
