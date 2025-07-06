@@ -6,6 +6,7 @@
       lazygit
       ripgrep
       tmux
+      wl-clipboard
       # dbeaver-bin
       # postman
       # github-desktop
