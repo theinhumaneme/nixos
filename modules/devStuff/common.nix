@@ -5,6 +5,7 @@
       neovim
       lazygit
       ripgrep
+      tmux
       # dbeaver-bin
       # postman
       # github-desktop
