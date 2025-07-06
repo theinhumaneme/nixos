@@ -12,7 +12,7 @@ let
   enableCTooling = true;
   enableJavaTooling = false;
   enableNodeJsTooling = false;
-  enableRustTooling = false;
+  enableRustTooling = true;
   enableDevTools = true;
   enableAutoCpuFreq = true;
 in
