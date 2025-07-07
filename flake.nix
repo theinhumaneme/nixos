@@ -46,10 +46,16 @@
       # Follow the Stable Channel
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    #
+    # NixVim
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+      inputs.nixpkgs.follows = "nixpkgsUnstable";
+    };
   };
   outputs = { self, nixpkgs, nixpkgsStable, nixpkgsUnstable, home-manager
-    , chaotic, zen-browser, determinate, ... }@inputs:
+    , chaotic, zen-browser, determinate, nixvim, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgsUnstable = import nixpkgsUnstable {
@@ -68,6 +74,7 @@
           };
           modules = [
             ./hosts/ThinkPadT16/ThinkPadT16.nix
+            nixvim.nixosModules.nixvim
             home-manager.nixosModules.home-manager
             ({ ... }: {
               nixpkgs = {

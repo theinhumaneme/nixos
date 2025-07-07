@@ -11,6 +11,7 @@ let
   enableNodeJsTooling = false;
   enableRustTooling = true;
   enableDevTools = true;
+  enableNeoVim = true;
   enableAutoCpuFreq = true;
 in {
   _module.args = {
@@ -41,6 +42,7 @@ in {
     ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
     ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
     ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
+    ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim.nix ]
     ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ];
 
   nix.settings = {
