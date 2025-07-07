@@ -7,7 +7,6 @@
 
       packages = with pkgs;
         [
-          git
           tree
           openssl
           btop-rocm
