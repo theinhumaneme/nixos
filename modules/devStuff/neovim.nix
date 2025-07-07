@@ -57,6 +57,9 @@
       nvim-autopairs = {
         enable = true;
       };
+      lint = {
+        enable = true;
+      };
       conform-nvim = {
         enable = true;
         # Define slow_format_filetypes here as a global Lua table
