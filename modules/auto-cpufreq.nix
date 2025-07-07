@@ -9,9 +9,9 @@
   services.auto-cpufreq.settings = {
     charger = {
       governor = "schedutil";
-      turbo = "auto";
-      energy_performance_preference = "balance_performance";
-      platform_profile = "balanced";
+      turbo = "always";
+      energy_performance_preference = "performance";
+      platform_profile = "performance";
     };
 
     battery = {
