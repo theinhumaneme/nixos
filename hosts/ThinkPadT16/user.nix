@@ -24,7 +24,6 @@
           fastfetch
           transmission_4-gtk
           steam
-          syncthing
           telegram-desktop
           stremio
           jellyfin-media-player
