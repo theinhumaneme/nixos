@@ -62,4 +62,7 @@
   };
   systemd.services.syncthing.environment.STNODEFAULTFOLDER =
     "true"; # Don't create default ~/Sync folder
+  home-manager.users."${userName}" =
+    import ./home.nix { inherit pkgs pkgsUnstable; };
+
 }
