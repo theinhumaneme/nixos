@@ -13,23 +13,34 @@ let
   enableDevTools = true;
   enableNeoVim = true;
   enableAutoCpuFreq = true;
-in {
+in
+{
   _module.args = {
-    inherit userName enableDocker enableCTooling enableJavaTooling
-      enableNodeJsTooling enableRustTooling enableDevTools;
+    inherit
+      userName
+      enableDocker
+      enableCTooling
+      enableJavaTooling
+      enableNodeJsTooling
+      enableRustTooling
+      enableDevTools
+      ;
 
   };
 
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./user.nix
-    ../../modules/desktopEnvironments/gnome.nix
-    ../../modules/sysctl-config.nix
-    ../../modules/desktopEnvironments/fish.nix
-  ] ++ lib.optionals enableChromeTmpfs [
-    ../../modules/tmpfsCache/chome-cache-tmpfs.nix
-  ] # google-chrome cache in tmpfs;
+  imports =
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./user.nix
+      ../../modules/desktopEnvironments/gnome.nix
+      ../../modules/sysctl-config.nix
+      ../../modules/desktopEnvironments/fish.nix
+    ]
+    ++ lib.optionals enableChromeTmpfs [
+      ../../modules/tmpfsCache/chome-cache-tmpfs.nix
+    ]
+    # google-chrome cache in tmpfs;
     ++ lib.optionals enableFirefoxTmpfs [
       ../../modules/tmpfsCache/firefox-cache-tmpfs.nix
     ] # firefox cache in tmpfs;
@@ -47,7 +58,10 @@ in {
 
   nix.settings = {
     auto-optimise-store = true;
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     lazy-trees = true;
   };
 
@@ -129,7 +143,10 @@ in {
     dnsovertls = "true";
     dnssec = "true";
     domains = [ "~." ];
-    fallbackDns = [ "8.8.8.8" "2001:4860:4860::8844" ];
+    fallbackDns = [
+      "8.8.8.8"
+      "2001:4860:4860::8844"
+    ];
   };
 
   # Enable Fingerprint Support
@@ -149,7 +166,9 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
-  zramSwap = { enable = true; };
+  zramSwap = {
+    enable = true;
+  };
 
   hardware.graphics.enable = true;
 

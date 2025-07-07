@@ -1,4 +1,5 @@
-{ pkgsUnstable, userName, ... }: {
+{ pkgsUnstable, userName, ... }:
+{
   users.users."${userName}" = {
     shell = pkgsUnstable.fish;
     packages = with pkgsUnstable; [ starship ];
@@ -11,6 +12,8 @@
         starship init fish | source
       '';
     };
-    starship = { enable = true; };
+    starship = {
+      enable = true;
+    };
   };
 }

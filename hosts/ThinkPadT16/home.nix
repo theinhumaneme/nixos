@@ -1,4 +1,5 @@
-{ pkgs, pkgsUnstable }: {
+{ pkgs, pkgsUnstable }:
+{
   programs = {
     git = {
       enable = true;

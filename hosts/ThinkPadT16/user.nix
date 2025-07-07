@@ -1,11 +1,22 @@
-{ pkgs, pkgsUnstable, userName, zen-browser, ... }: {
+{
+  pkgs,
+  pkgsUnstable,
+  userName,
+  zen-browser,
+  ...
+}:
+{
   users.users = {
     "${userName}" = {
       isNormalUser = true;
       description = "Kalyan Mudumby";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
 
-      packages = with pkgs;
+      packages =
+        with pkgs;
         [
           tree
           openssl
@@ -14,7 +25,8 @@
           android-tools
           stow
           wireguard-tools
-        ] ++ (with pkgsUnstable; [
+        ]
+        ++ (with pkgsUnstable; [
           obsidian
           spotify
           aria
@@ -28,7 +40,8 @@
           jellyfin-media-player
           discord
           zoom-us
-        ]) ++ [ zen-browser.packages."${system}".default ];
+        ])
+        ++ [ zen-browser.packages."${system}".default ];
     };
   };
 
@@ -45,8 +58,7 @@
   programs = {
     steam = {
       enable = true;
-      remotePlay.openFirewall =
-        true; # Open ports in the firewall for Steam Remote Play
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     };
   };
   services = {
@@ -55,13 +67,10 @@
       user = userName;
       openDefaultPorts = true;
       dataDir = "/home/${userName}";
-      configDir =
-        "/home/${userName}/.config/syncthing"; # Folder for Syncthing's settings and keys
+      configDir = "/home/${userName}/.config/syncthing"; # Folder for Syncthing's settings and keys
     };
   };
-  systemd.services.syncthing.environment.STNODEFAULTFOLDER =
-    "true"; # Don't create default ~/Sync folder
-  home-manager.users."${userName}" =
-    import ./home.nix { inherit pkgs pkgsUnstable; };
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true"; # Don't create default ~/Sync folder
+  home-manager.users."${userName}" = import ./home.nix { inherit pkgs pkgsUnstable; };
 
 }

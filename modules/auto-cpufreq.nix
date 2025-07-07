@@ -1,4 +1,5 @@
-{ pkgsUnstable, userName, ... }: {
+{ pkgsUnstable, userName, ... }:
+{
 
   users.users."${userName}" = {
 
