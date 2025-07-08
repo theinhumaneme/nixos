@@ -55,8 +55,6 @@
       # gnomeExtensions.blur-my-shell
       # gnomeExtensions.vitals
       # gnomeExtensions.clipboard-history
-      # bibata-cursors
-      # papirus-icon-theme
     ]);
 
   home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
