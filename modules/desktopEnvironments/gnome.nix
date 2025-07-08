@@ -50,11 +50,11 @@
     ]
     # Customization and Tweaks
     ++ (with pkgs; [
-      # gnome-gnome-tweaks
-      # gnomeExtensions.dash2dock-lite
-      # gnomeExtensions.blur-my-shell
-      # gnomeExtensions.vitals
-      # gnomeExtensions.clipboard-history
+      gnome-tweaks
+      gnomeExtensions.dash2dock-lite
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.vitals
+      gnomeExtensions.clipboard-history
     ]);
 
   home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
