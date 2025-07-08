@@ -34,7 +34,6 @@
           power-profiles-daemon
           fastfetch
           transmission_4-gtk
-          steam
           telegram-desktop
           stremio
           jellyfin-media-player
@@ -59,6 +58,7 @@
     steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      extraCompatPackages = with pkgs; [ proton-ge-custom ];
     };
   };
   services = {
