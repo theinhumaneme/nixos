@@ -21,9 +21,8 @@
     # For CachyOS Kernel
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs.nixpkgs.follows = "nixpkgsUnstable";
-      inputs.home-manager.follows = "home-manager";
     };
+
     #
     # Zen Browser Flake
     # URL - https://github.com/0xc000022070/zen-browser-flake
@@ -35,6 +34,7 @@
       inputs.nixpkgs.follows = "nixpkgsUnstable";
       inputs.home-manager.follows = "home-manager";
     };
+
     #
     # Determinate Nix Flake
     # URL - https://docs.determinate.systems/
@@ -46,6 +46,7 @@
       # Follow the Stable Channel
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     #
     # NixVim
     nixvim = {
