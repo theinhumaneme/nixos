@@ -39,6 +39,7 @@
           jellyfin-media-player
           discord
           zoom-us
+          gimp
         ])
         ++ [ zen-browser.packages."${system}".default ];
     };
