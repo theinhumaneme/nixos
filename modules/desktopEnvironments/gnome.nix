@@ -50,10 +50,10 @@
     ]
     # Customization and Tweaks
     ++ (with pkgs; [
-      gnome-tweaks
-      gnomeExtensions.dash2dock-lite
+      #      gnome-tweaks
+      #      gnomeExtensions.dash2dock-lite
       gnomeExtensions.blur-my-shell
-      gnomeExtensions.vitals
+      #      gnomeExtensions.vitals
       gnomeExtensions.clipboard-history
     ]);
 
