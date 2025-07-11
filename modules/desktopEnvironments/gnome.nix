@@ -44,7 +44,7 @@
       collision # checksum application
       curtail # image compression tool
       resources # better system-monitor
-      ptyxis # latest container-based terminal emulator
+      ghostty
       papers # latest document-viewer
       gradia # screenshot application
     ]
