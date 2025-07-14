@@ -46,6 +46,7 @@
   };
 
   fonts = {
+    packages = with pkgsUnstable; [ nerd-fonts.fira-code ];
     fontconfig = {
       enable = true;
       subpixel.rgba = "rgb";

@@ -34,7 +34,6 @@
     gnome-console
   ];
 
-  fonts.packages = with pkgsUnstable; [ nerd-fonts.fira-code ];
   users.users."${userName}".packages =
     # Apps
     with pkgs;
