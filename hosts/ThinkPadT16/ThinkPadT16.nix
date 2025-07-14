@@ -176,8 +176,10 @@ in
   chaotic.mesa-git.enable = true;
 
   # Disable Bluetooth Autostart
-  hardware.bluetooth.powerOnBoot = false;
-
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
