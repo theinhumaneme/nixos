@@ -7,10 +7,10 @@
       package = pkgsUnstable.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
-    iconTheme = {
-      package = pkgsUnstable.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
+    #    iconTheme = {
+    #      package = pkgsUnstable.papirus-icon-theme;
+    #      name = "Papirus-Dark";
+    #    };
   };
 
   dconf.settings = {
