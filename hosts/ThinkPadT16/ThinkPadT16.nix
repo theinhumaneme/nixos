@@ -92,6 +92,7 @@ in
   # Bootloader and Kernel
   boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
   services.scx = {
+    package = pkgs.scx_git.full;
     enable = true;
     scheduler = "scx_lavd";
     extraArgs = [ "--autopower" ];
