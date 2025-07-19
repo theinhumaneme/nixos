@@ -91,7 +91,7 @@ in
   };
 
   # Bootloader and Kernel
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   services.scx = {
     package = pkgs.scx_git.full;
     enable = true;
