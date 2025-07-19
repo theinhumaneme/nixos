@@ -32,6 +32,7 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/bluetooth.nix
       ./user.nix
       ../../modules/desktopEnvironments/gnome.nix
       ../../modules/sysctl-config.nix
@@ -176,11 +177,6 @@ in
   # enable Chaotic NYX beelding edge Mesa Drivers
   chaotic.mesa-git.enable = true;
 
-  # Disable Bluetooth Autostart
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
