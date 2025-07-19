@@ -179,7 +179,7 @@ in
   # Disable Bluetooth Autostart
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    powerOnBoot = true;
   };
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
