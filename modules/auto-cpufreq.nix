@@ -9,7 +9,7 @@
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     charger = {
-      governor = "schedutil";
+      governor = "performance";
       turbo = "always";
       energy_performance_preference = "performance";
       platform_profile = "performance";
