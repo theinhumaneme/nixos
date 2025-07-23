@@ -13,6 +13,7 @@ let
   enableDevTools = true;
   enableNeoVim = true;
   enableAutoCpuFreq = true;
+  enableTLP = false;
 in
 {
   _module.args = {
@@ -28,34 +29,34 @@ in
 
   };
 
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/bluetooth.nix
-      ./user.nix
-      ../../modules/desktopEnvironments/gnome.nix
-      ../../modules/sysctl-config.nix
-      ../../modules/desktopEnvironments/fish.nix
-    ]
-    ++ lib.optionals enableChromeTmpfs [
-      ../../modules/tmpfsCache/chome-cache-tmpfs.nix
-    ]
-    # google-chrome cache in tmpfs;
-    ++ lib.optionals enableFirefoxTmpfs [
-      ../../modules/tmpfsCache/firefox-cache-tmpfs.nix
-    ] # firefox cache in tmpfs;
-    ++ lib.optionals enableZenTmpfs [
-      ../../modules/tmpfsCache/zen-cache-tmpfs.nix
-    ] # zen-browser cache in tmpfs;
-    ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
-    ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
-    ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
-    ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
-    ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
-    ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
-    ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
-    ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/bluetooth.nix
+    ./user.nix
+    ../../modules/desktopEnvironments/gnome.nix
+    ../../modules/sysctl-config.nix
+    ../../modules/desktopEnvironments/fish.nix
+  ]
+  ++ lib.optionals enableChromeTmpfs [
+    ../../modules/tmpfsCache/chome-cache-tmpfs.nix
+  ]
+  # google-chrome cache in tmpfs;
+  ++ lib.optionals enableFirefoxTmpfs [
+    ../../modules/tmpfsCache/firefox-cache-tmpfs.nix
+  ] # firefox cache in tmpfs;
+  ++ lib.optionals enableZenTmpfs [
+    ../../modules/tmpfsCache/zen-cache-tmpfs.nix
+  ] # zen-browser cache in tmpfs;
+  ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
+  ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
+  ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
+  ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
+  ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
+  ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
+  ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
+  ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ]
+  ++ lib.optionals enableTLP [ ../../modules/tlp.nix ];
 
   nix.settings = {
     auto-optimise-store = true;
