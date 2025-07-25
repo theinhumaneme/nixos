@@ -40,6 +40,7 @@
           discord
           zoom-us
           gimp
+          libreoffice-qt6-fresh
         ])
         ++ [ zen-browser.packages."${system}".default ];
     };
