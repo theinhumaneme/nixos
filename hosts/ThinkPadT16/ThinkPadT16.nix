@@ -3,7 +3,7 @@ let
   userName = "kalyanm";
   hostName = "ThinkPadT16";
   enableChromeTmpfs = false;
-  enableFirefoxTmpfs = false;
+  enableFirefoxTmpfs = true;
   enableZenTmpfs = true;
   enableDocker = false;
   enableCTooling = true;
