@@ -2,9 +2,6 @@
 let
   userName = "kalyanm";
   hostName = "ThinkPadT16";
-  enableChromeTmpfs = false;
-  enableFirefoxTmpfs = true;
-  enableZenTmpfs = true;
   enableDocker = false;
   enableCTooling = true;
   enableJavaTooling = false;
@@ -34,20 +31,11 @@ in
     ./hardware-configuration.nix
     ../../modules/bluetooth.nix
     ./user.nix
+    ../../modules/browser.nix
     ../../modules/desktopEnvironments/gnome.nix
     ../../modules/sysctl-config.nix
     ../../modules/desktopEnvironments/fish.nix
   ]
-  ++ lib.optionals enableChromeTmpfs [
-    ../../modules/tmpfsCache/chome-cache-tmpfs.nix
-  ]
-  # google-chrome cache in tmpfs;
-  ++ lib.optionals enableFirefoxTmpfs [
-    ../../modules/tmpfsCache/firefox-cache-tmpfs.nix
-  ] # firefox cache in tmpfs;
-  ++ lib.optionals enableZenTmpfs [
-    ../../modules/tmpfsCache/zen-cache-tmpfs.nix
-  ] # zen-browser cache in tmpfs;
   ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
   ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
   ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]

@@ -2,7 +2,6 @@
   pkgs,
   pkgsUnstable,
   userName,
-  zen-browser,
   ...
 }:
 {
@@ -41,9 +40,7 @@
           zoom-us
           gimp
           libreoffice-qt6-fresh
-          firefox
-        ])
-        ++ [ zen-browser.packages."${system}".default ];
+        ]);
     };
   };
 
