@@ -13,6 +13,7 @@
         lazygit
         ripgrep
         tmux
+        gemini-cli
         # dbeaver-bin
         # postman
         # github-desktop
