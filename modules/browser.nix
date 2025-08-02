@@ -1,4 +1,10 @@
-{ lib, ... }:
+{
+  lib,
+  userName,
+  pkgs,
+  pkgsUnstable,
+  ...
+}:
 let
   enableChrome = false;
   enableFirefox = false;
@@ -22,4 +28,6 @@ in
       ./browsers/zen-browser.nix
 
     ];
+  home-manager.users."${userName}" = import ./browsers/home.nix { inherit pkgs pkgsUnstable; };
+
 }
