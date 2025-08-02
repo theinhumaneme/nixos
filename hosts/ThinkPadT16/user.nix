@@ -19,27 +19,9 @@
         [
           tree
           openssl
-          btop-rocm
-          gnome-power-manager
-          android-tools
           stow
-          wireguard-tools
         ]
         ++ (with pkgsUnstable; [
-          obsidian
-          spotify
-          aria
-          mpv
-          power-profiles-daemon
-          fastfetch
-          transmission_4-gtk
-          telegram-desktop
-          stremio
-          jellyfin-media-player
-          discord
-          zoom-us
-          gimp
-          libreoffice-qt6-fresh
         ]);
     };
   };

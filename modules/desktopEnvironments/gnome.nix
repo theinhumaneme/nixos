@@ -38,14 +38,15 @@
     # Apps
     with pkgs;
     [
-      gnome-firmware
+      gnome-firmware # gnome-firmware-tool
       foliate # e-pub reader
       collision # checksum application
       curtail # image compression tool
       resources # better system-monitor
-      ghostty
+      ghostty # new age terminal
       papers # latest document-viewer
       gradia # screenshot application
+      gnome-power-manager # power management tool
     ]
     # Customization and Tweaks
     ++ (with pkgs; [

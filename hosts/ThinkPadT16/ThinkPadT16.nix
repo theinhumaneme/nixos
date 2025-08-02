@@ -31,6 +31,7 @@ in
     ./hardware-configuration.nix
     ../../modules/bluetooth.nix
     ./user.nix
+    ./apps.nix
     ../../modules/browser.nix
     ../../modules/desktopEnvironments/gnome.nix
     ../../modules/sysctl-config.nix
