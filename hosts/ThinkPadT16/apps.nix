@@ -27,6 +27,7 @@
         zoom-us
         gimp
         libreoffice-qt6-fresh
+        element-desktop
       ]);
   };
 
