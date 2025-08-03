@@ -33,7 +33,7 @@ in
     ./user.nix
     ./apps.nix
     ../../modules/browser.nix
-    ../../modules/desktopEnvironments/gnome.nix
+    ../../modules/desktopEnvironments/niri.nix
     ../../modules/sysctl-config.nix
     ../../modules/desktopEnvironments/fish.nix
   ]
