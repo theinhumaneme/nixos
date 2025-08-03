@@ -12,7 +12,10 @@
       sddm.enable = true;
     };
   };
-  programs.niri.enable = true;
+  programs.niri = {
+    package = pkgs.niri_git;
+    enable = true;
+  };
   users.users."${userName}".packages =
     # Apps
     with pkgs;
