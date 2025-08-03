@@ -16,6 +16,7 @@
     package = pkgs.niri_git;
     enable = true;
   };
+  security.polkit.enable = true;
   users.users."${userName}".packages =
     # Apps
     with pkgs;
