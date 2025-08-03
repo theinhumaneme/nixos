@@ -36,6 +36,7 @@
       swaylock
       swayidle
       nautilus
+      resources
     ]);
   home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 
