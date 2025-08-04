@@ -38,6 +38,7 @@
       nautilus
       resources
       pavucontrol
+      networkmanagerapplet
     ]);
   #  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 
