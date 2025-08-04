@@ -3,7 +3,12 @@
   programs.nixvim = {
     # Linting
     # https://nix-community.github.io/nixvim/plugins/lint/index.html
-    extraPackages = with pkgs; [ markdownlint-cli ];
+    extraPackages = with pkgs; [
+      markdownlint-cli
+      yamllint
+      taplo
+      stylelint
+    ];
     plugins.lint = {
       enable = true;
       # NOTE: Enabling these will cause errors unless these tools are installed
@@ -13,6 +18,9 @@
           "markdownlint"
           #vale
         ];
+        yaml = [ "yamllint" ];
+        toml = [ "taplo" ];
+        css = [ "stylelint" ];
         #clojure = ["clj-kondo"];
         #dockerfile = ["hadolint"];
         #inko = ["inko"];
