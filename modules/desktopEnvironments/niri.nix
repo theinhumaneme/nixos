@@ -32,7 +32,7 @@
     ++ (with pkgsUnstable; [
       mako # notification daemon
       alacritty # terminal
-      fuzzel # App Launcher
+      walker
       waybar
       swaybg
       swaylock
