@@ -27,7 +27,10 @@
   };
 
   fonts = {
-    packages = with pkgsUnstable; [ nerd-fonts.fira-code ];
+    packages = with pkgsUnstable; [
+      nerd-fonts.caskaydia-mono
+      adwaita-fonts
+    ];
     fontconfig = {
       enable = true;
       subpixel.rgba = "rgb";
