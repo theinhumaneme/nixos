@@ -12,9 +12,11 @@
       sddm.enable = true;
     };
   };
-  programs.niri = {
-    package = pkgs.niri_git;
-    enable = true;
+  programs = {
+    niri = {
+      package = pkgs.niri_git;
+      enable = true;
+    };
   };
   security.polkit.enable = true;
   users.users."${userName}".packages =
