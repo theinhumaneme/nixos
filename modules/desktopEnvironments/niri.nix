@@ -42,6 +42,10 @@
       pavucontrol
       networkmanagerapplet
       swww
+      papers
+      loupe
+      collision
+      gnome-text-editor
     ]);
   #  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 
