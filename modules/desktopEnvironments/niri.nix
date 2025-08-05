@@ -42,6 +42,7 @@
       pavucontrol
       networkmanagerapplet
       swww
+      brightnessctl
       papers
       loupe
       collision
