@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgsUnstable,
-  lib,
   userName,
   ...
 }:
@@ -35,8 +34,8 @@
       walker
       waybar
       swaybg
-      swaylock
-      swayidle
+      hyprlock
+      hypridle
       nautilus
       resources
       pavucontrol
