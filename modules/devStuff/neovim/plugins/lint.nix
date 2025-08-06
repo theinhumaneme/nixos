@@ -6,7 +6,6 @@
     extraPackages = with pkgs; [
       markdownlint-cli
       yamllint
-      taplo
       stylelint
     ];
     plugins.lint = {
@@ -19,7 +18,6 @@
           #vale
         ];
         yaml = [ "yamllint" ];
-        toml = [ "taplo" ];
         css = [ "stylelint" ];
         #clojure = ["clj-kondo"];
         #dockerfile = ["hadolint"];
