@@ -28,6 +28,7 @@
         gimp
         libreoffice-qt6-fresh
         element-desktop
+        bitwarden-desktop
       ]);
   };
 
