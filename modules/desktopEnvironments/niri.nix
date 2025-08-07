@@ -17,7 +17,26 @@
       enable = true;
     };
   };
+  # Enable Polkit Service
   security.polkit.enable = true;
+  # Enable Gnome Keyring for Niri
+  security.pam.services.niri.enableGnomeKeyring = true;
+  # Add a service to start the gnome-polkit agent on startup
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
   users.users."${userName}".packages =
     # Apps
     with pkgs;
@@ -25,7 +44,6 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome # required for screen-casting
       gnome-keyring # for secret management
-      polkit_gnome # polkit agent
     ]
     ++ (with pkgsUnstable; [
       xwayland-satellite # XWayland Integration
