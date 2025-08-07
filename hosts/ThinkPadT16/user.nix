@@ -17,9 +17,9 @@
       packages =
         with pkgs;
         [
-          tree
           openssl
           stow
+          tree
         ]
         ++ (with pkgsUnstable; [
         ]);
@@ -28,15 +28,15 @@
 
   fonts = {
     packages = with pkgsUnstable; [
-      nerd-fonts.caskaydia-mono
       adwaita-fonts
+      nerd-fonts.caskaydia-mono
     ];
     fontconfig = {
       enable = true;
-      subpixel.rgba = "rgb";
       hinting.autohint = true;
       hinting.enable = true;
       subpixel.lcdfilter = "light";
+      subpixel.rgba = "rgb";
     };
   };
 

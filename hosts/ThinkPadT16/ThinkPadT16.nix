@@ -2,49 +2,49 @@
 let
   userName = "kalyanm";
   hostName = "ThinkPadT16";
-  enableDocker = false;
+  enableAutoCpuFreq = true;
   enableCTooling = true;
+  enableDevTools = true;
+  enableDocker = false;
   enableJavaTooling = false;
+  enableNeoVim = true;
   enableNodeJsTooling = false;
   enableRustTooling = true;
-  enableDevTools = true;
-  enableNeoVim = true;
-  enableAutoCpuFreq = true;
   enableTLP = false;
 in
 {
   _module.args = {
     inherit
       userName
-      enableDocker
       enableCTooling
+      enableDevTools
+      enableDocker
       enableJavaTooling
       enableNodeJsTooling
       enableRustTooling
-      enableDevTools
       ;
 
   };
 
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     ../../modules/bluetooth.nix
-    ./user.nix
     ../../modules/browser.nix
+    ../../modules/desktopEnvironments/fish.nix
     ../../modules/desktopEnvironments/niri.nix
     ../../modules/sysctl-config.nix
-    ../../modules/desktopEnvironments/fish.nix
+    ./hardware-configuration.nix
     ./user-apps.nix
+    ./user.nix
   ]
-  ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
+  ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ]
   ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
+  ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
+  ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
   ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
+  ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
   ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
   ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
-  ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
-  ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
-  ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ]
   ++ lib.optionals enableTLP [ ../../modules/tlp.nix ];
 
   nix.settings = {
@@ -90,12 +90,12 @@ in
   };
 
   boot.kernelParams = [
-    "quiet"
-    "splash"
-    "amdgpu.abmlevel=0"
-    "rcutree.enable_rcu_lazy=1"
-    "nowatchdog"
     "amd_pstate=guided"
+    "amdgpu.abmlevel=0"
+    "nowatchdog"
+    "quiet"
+    "rcutree.enable_rcu_lazy=1"
+    "splash"
   ];
   boot.loader = {
     timeout = 0;
@@ -123,10 +123,10 @@ in
   networking.firewall.checkReversePath = false;
   networking.nameservers = [
     "192.168.1.183"
-    "1.1.1.1#one.one.one.one"
     "1.0.0.1#one.one.one.one"
-    "2606:4700:4700::1111#one.one.one.one"
+    "1.1.1.1#one.one.one.one"
     "2606:4700:4700::1001#one.one.one.one"
+    "2606:4700:4700::1111#one.one.one.one"
   ];
 
   networking.networkmanager.dns = "systemd-resolved";
