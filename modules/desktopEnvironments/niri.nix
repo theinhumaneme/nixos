@@ -49,20 +49,19 @@
       xwayland-satellite # XWayland Integration
       mako # notification daemon
       alacritty # terminal
-      walker
-      waybar
-      swaybg
-      hyprlock
-      hypridle
-      nautilus
-      resources
-      pavucontrol
-      networkmanagerapplet
-      swww
-      brightnessctl
-      papers
-      loupe
-      collision
+      walker # Application Launcher
+      waybar # Status Bar
+      hyprlock # Hypr Ecosystem LockScreen
+      hypridle # Hypr Ecosystem Idle Daemon
+      nautilus # Gnome FileManager
+      resources # Gnome Resources
+      pavucontrol # Audio Control GUI
+      networkmanagerapplet # Network Manager GUI
+      swww # Wallpaper Daemon
+      brightnessctl # Manage Display Backlight
+      papers # PDF Viewer
+      loupe # Gnome Image Viewer
+      collision # Gnome Circle Checksum App
       gnome-text-editor
     ]);
   #  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
