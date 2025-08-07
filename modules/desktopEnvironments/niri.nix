@@ -41,29 +41,26 @@
     # Apps
     with pkgs;
     [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-gnome # required for screen-casting
       gnome-keyring # for secret management
+      xdg-desktop-portal-gnome # required for screen-casting
+      xdg-desktop-portal-gtk
     ]
     ++ (with pkgsUnstable; [
-      xwayland-satellite # XWayland Integration
-      mako # notification daemon
       alacritty # terminal
+      brightnessctl # Manage Display Backlight
+      hypridle # Hypr Ecosystem Idle Daemon
+      hyprlock # Hypr Ecosystem LockScreen
+      mako # notification daemon
+      networkmanagerapplet # Network Manager GUI
+      pavucontrol # Audio Control GUI
+      swww # Wallpaper Daemon
       walker # Application Launcher
       waybar # Status Bar
-      hyprlock # Hypr Ecosystem LockScreen
-      hypridle # Hypr Ecosystem Idle Daemon
-      nautilus # Gnome FileManager
-      resources # Gnome Resources
-      pavucontrol # Audio Control GUI
-      networkmanagerapplet # Network Manager GUI
-      swww # Wallpaper Daemon
-      brightnessctl # Manage Display Backlight
-      papers # PDF Viewer
-      loupe # Gnome Image Viewer
-      collision # Gnome Circle Checksum App
-      gnome-text-editor
+      xwayland-satellite # XWayland Integration
     ]);
+
+  # All Common Desktop Apps
+  imports = [ ./desktop-apps.nix ];
   #  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 
 }

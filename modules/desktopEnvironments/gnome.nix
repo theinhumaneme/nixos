@@ -13,49 +13,45 @@
   };
 
   environment.gnome.excludePackages = with pkgs; [
+    decibels
     epiphany # web browser
-    simple-scan # document scanner
-    totem # video player
-    yelp # help viewer
     evince # document viewer
     geary # email client
     gnome-characters
+    gnome-connections
+    gnome-console
     gnome-contacts
+    gnome-font-viewer
     gnome-logs
     gnome-maps
     gnome-music
     gnome-photos
-    gnome-connections
-    gnome-tour
-    decibels
     gnome-system-monitor
+    gnome-tour
     seahorse
-    gnome-font-viewer
-    gnome-console
+    simple-scan # document scanner
+    totem # video player
+    yelp # help viewer
   ];
 
   users.users."${userName}".packages =
     # Apps
     with pkgs;
     [
-      gnome-firmware # gnome-firmware-tool
-      foliate # e-pub reader
-      collision # checksum application
-      curtail # image compression tool
-      resources # better system-monitor
       ghostty # new age terminal
-      papers # latest document-viewer
-      gradia # screenshot application
       gnome-power-manager # power management tool
+      gradia # screenshot application
     ]
     # Customization and Tweaks
     ++ (with pkgs; [
       #      gnome-tweaks
       #      gnomeExtensions.dash2dock-lite
-      gnomeExtensions.blur-my-shell
       #      gnomeExtensions.vitals
+      gnomeExtensions.blur-my-shell
       gnomeExtensions.clipboard-history
     ]);
 
-  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
+  # All Common Desktop Apps
+  imports = [ ./desktop-apps.nix ];
+  # home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 }
