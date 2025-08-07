@@ -31,11 +31,11 @@ in
     ./hardware-configuration.nix
     ../../modules/bluetooth.nix
     ./user.nix
-    ./apps.nix
     ../../modules/browser.nix
     ../../modules/desktopEnvironments/niri.nix
     ../../modules/sysctl-config.nix
     ../../modules/desktopEnvironments/fish.nix
+    ./user-apps.nix
   ]
   ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
   ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
