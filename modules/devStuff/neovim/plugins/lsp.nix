@@ -107,7 +107,7 @@
             # };
           };
         };
-        nil_ls = {
+        nixd = {
           enable = true;
 
         };
