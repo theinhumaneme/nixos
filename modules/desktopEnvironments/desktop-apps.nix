@@ -14,11 +14,11 @@
       gnome-obfuscate # Censor Private Information
       gnome-text-editor # Gnome Text Editor App
       loupe # Gnome Image Viewer
-      nautilus # Gnome File Manager
       papers # PDF Viewer
       papers # latest document-viewer
       resources # Gnome Resources
       varia # Download Manager Based on aria2c and yt-dlp
+      cosmic-files # cosmic file manager
     ];
 
 }
