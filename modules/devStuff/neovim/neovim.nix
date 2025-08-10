@@ -1,8 +1,4 @@
 {
-  lib,
-  userName,
-  pkgs,
-  pkgsUnstable,
   ...
 }:
 {

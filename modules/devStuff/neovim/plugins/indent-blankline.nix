@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.nixvim = {
     # Neo-tree is a Neovim plugin to browse the file system

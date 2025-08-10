@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.nixvim = {
     # Highlight todo, notes, etc in comments

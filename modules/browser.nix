@@ -1,8 +1,5 @@
 {
   lib,
-  userName,
-  pkgs,
-  pkgsUnstable,
   ...
 }:
 let

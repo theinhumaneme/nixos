@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ ... }:
 {
   programs.nixvim = {
     # Fuzzy Finder (files, lsp, etc)

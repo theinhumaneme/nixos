@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 let
   userName = "kalyanm";
   hostName = "ThinkPadT16";
