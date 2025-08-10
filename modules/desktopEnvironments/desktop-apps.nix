@@ -19,6 +19,7 @@
       resources # Gnome Resources
       varia # Download Manager Based on aria2c and yt-dlp
       cosmic-files # cosmic file manager
+      gnome-power-manager # Gnome Power Manager
     ];
 
 }
