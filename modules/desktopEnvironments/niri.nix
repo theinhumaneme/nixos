@@ -46,7 +46,7 @@
       xdg-desktop-portal-gtk
     ]
     ++ (with pkgsUnstable; [
-      kitty # terminal
+      alacritty # terminal
       brightnessctl # Manage Display Backlight
       hypridle # Hypr Ecosystem Idle Daemon
       hyprlock # Hypr Ecosystem LockScreen
