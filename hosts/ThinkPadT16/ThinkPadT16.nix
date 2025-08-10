@@ -34,9 +34,9 @@ in
     ../../modules/desktopEnvironments/fish.nix
     ../../modules/desktopEnvironments/niri.nix
     ../../modules/sysctl-config.nix
+    ../../user/user-apps.nix
+    ./../../user/user.nix
     ./hardware-configuration.nix
-    ./user-apps.nix
-    ./user.nix
   ]
   ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ]
   ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
