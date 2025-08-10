@@ -108,6 +108,7 @@
       #media-session.enable = true;
     };
     fwupd.enable = true;
+    upower.enable = true;
   };
 
   zramSwap = {
