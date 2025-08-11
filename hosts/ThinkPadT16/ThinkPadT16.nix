@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 let
   userName = "kalyanm";
   hostName = "ThinkPadT16";
@@ -51,14 +51,18 @@ in
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
-  boot.kernelParams = [
-    "amd_pstate=guided"
-    "amdgpu.abmlevel=0"
-    "nowatchdog"
-    "quiet"
-    "rcutree.enable_rcu_lazy=1"
-    "splash"
-  ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_cachyos;
+
+    kernelParams = [
+      "amd_pstate=guided"
+      "amdgpu.abmlevel=0"
+      "nowatchdog"
+      "quiet"
+      "rcutree.enable_rcu_lazy=1"
+      "splash"
+    ];
+  };
 
   # Networking
   networking.hostName = hostName;

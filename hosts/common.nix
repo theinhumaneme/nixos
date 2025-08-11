@@ -35,8 +35,6 @@
   };
   # Bootloader and Kernel
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
-
     loader = {
       timeout = 0;
       systemd-boot = {
