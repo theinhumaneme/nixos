@@ -48,6 +48,13 @@
       #      gnomeExtensions.vitals
       gnomeExtensions.blur-my-shell
       gnomeExtensions.clipboard-history
+    ])
+    # Packages required for the File Roller
+    ++ (with pkgs; [
+      _7zz
+      unrar
+      unzip
+      zip
     ]);
 
   # All Common Desktop Apps
