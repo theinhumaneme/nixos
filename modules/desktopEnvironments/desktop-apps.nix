@@ -18,6 +18,7 @@
       gnome-text-editor # Gnome Text Editor App
       keypunch # Typing Practice
       loupe # Gnome Image Viewer
+      newsflash # RSS Reader
       papers # PDF Viewer
       papers # latest document-viewer
       resources # Gnome Resources
