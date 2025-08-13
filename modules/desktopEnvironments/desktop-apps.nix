@@ -13,6 +13,7 @@
       curtail # image compression tool
       foliate # e-pub reader
       gnome-calculator # Gnome Calculator
+      gnome-clocks # Clocks App
       gnome-obfuscate # Censor Private Information
       gnome-power-manager # Gnome Power Manager
       gnome-text-editor # Gnome Text Editor App
