@@ -16,6 +16,7 @@
       gnome-obfuscate # Censor Private Information
       gnome-power-manager # Gnome Power Manager
       gnome-text-editor # Gnome Text Editor App
+      keypunch # Typing Practice
       loupe # Gnome Image Viewer
       papers # PDF Viewer
       papers # latest document-viewer
