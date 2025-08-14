@@ -10,13 +10,14 @@
     lib.optionals enableDevTools (
       with pkgsUnstable;
       [
+        # dbeaver-bin
+        # github-desktop
+        # postman
+        gemini-cli
+        git
         lazygit
         ripgrep
         tmux
-        gemini-cli
-        # dbeaver-bin
-        # postman
-        # github-desktop
 
       ]
     )
