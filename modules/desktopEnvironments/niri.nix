@@ -41,6 +41,8 @@
     # Apps
     with pkgs;
     [
+      adwaita-icon-theme
+      bibata-cursors
       gnome-keyring # for secret management
       xdg-desktop-portal-gnome # required for screen-casting
       xdg-desktop-portal-gtk
