@@ -106,6 +106,34 @@
             determinate.nixosModules.default
           ];
         };
+        SER7 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit pkgsUnstable;
+            inherit chaotic;
+            inherit zen-browser;
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/SER7/SER7.nix
+            nixvim.nixosModules.nixvim
+            home-manager.nixosModules.home-manager
+            (
+              { ... }:
+              {
+                nixpkgs = {
+                  inherit system;
+                  # This configures the `pkgs` argument passed to all modules.
+                  config.allowUnfree = true;
+                };
+              }
+            )
+            chaotic.nixosModules.default
+            # Load the Determinate module
+            determinate.nixosModules.default
+          ];
+        };
       };
+
     };
 }
