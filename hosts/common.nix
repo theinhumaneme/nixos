@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  imports = [ ../modules/desktopEnvironments/fish.nix ];
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -125,14 +126,14 @@
   system.rebuild.enableNg = true;
 
   environment.systemPackages = with pkgs; [
-    mesa-demos
-    vulkan-tools
     busybox
     fwupd
-    pciutils
-    usbutils
     lm_sensors
+    mesa-demos
+    pciutils
     smartmontools
+    usbutils
+    vulkan-tools
   ];
 
   # This value determines the NixOS release from which the default
