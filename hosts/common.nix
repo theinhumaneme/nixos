@@ -3,6 +3,16 @@
   imports = [ ../modules/desktopEnvironments/fish.nix ];
   nix = {
     settings = {
+      substituters = [
+        "https://cache.nixos.org/"
+        "https://install.determinate.systems"
+        "https://chaotic-nyx.cachix.org/"
+      ];
+      trusted-public-keys = [
+        "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="
+        "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
+        "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+      ];
       auto-optimise-store = true;
       experimental-features = [
         "nix-command"
