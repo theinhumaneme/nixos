@@ -4,6 +4,9 @@
   ...
 }:
 {
+  # Enable the Gnome Virtual File System
+  services.gvfs.enable = true;
+
   users.users."${userName}".packages =
     # Apps
     with pkgsUnstable;
