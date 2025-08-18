@@ -10,6 +10,7 @@
       sddm.wayland.enable = true;
       sddm.enable = true;
     };
+    power-profiles-daemon.enable = true;
   };
   programs = {
     niri = {
@@ -55,6 +56,7 @@
       mako # notification daemon
       networkmanagerapplet # Network Manager GUI
       pavucontrol # Audio Control GUI
+      power-profiles-daemon
       swww # Wallpaper Daemon
       walker # Application Launcher
       waybar # Status Bar
