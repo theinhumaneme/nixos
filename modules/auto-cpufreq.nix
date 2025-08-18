@@ -1,11 +1,16 @@
-{ pkgsUnstable, userName, ... }:
+{
+  lib,
+  pkgsUnstable,
+  userName,
+  ...
+}:
 {
 
   users.users."${userName}" = {
 
     packages = with pkgsUnstable; [ auto-cpufreq ];
   };
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = lib.mkForce false;
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     charger = {
