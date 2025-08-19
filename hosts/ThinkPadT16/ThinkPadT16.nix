@@ -32,7 +32,7 @@ in
     ../../modules/bluetooth.nix
     ../../modules/browser.nix
     ../../modules/desktopEnvironments/fish.nix
-    ../../modules/desktopEnvironments/niri.nix
+    ./T16-mods/niri.nix
     ../../modules/sysctl-config.nix
     ../../user/user-apps.nix
     ./../../user/user.nix
