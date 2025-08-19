@@ -7,7 +7,7 @@
 let
   userName = "kalyanm";
   hostName = "SER7";
-  enableAutoCpuFreq = true;
+  enableAutoCpuFreq = false;
   enableCTooling = true;
   enableDevTools = true;
   enableDocker = false;
