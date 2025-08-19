@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   userName = "kalyanm";
   hostName = "SER7";
@@ -32,7 +37,7 @@ in
     ../../modules/bluetooth.nix
     ../../modules/browser.nix
     ../../modules/desktopEnvironments/fish.nix
-    ../../modules/desktopEnvironments/niri.nix
+    ./SER7-mods/niri.nix
     ../../modules/sysctl-config.nix
     ../../user/user-apps.nix
     ./../../user/user.nix
@@ -61,6 +66,19 @@ in
       "splash"
     ];
   };
+
+  # ===================================== #
+  # External Display Backlight Management
+  boot.extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
+  boot.kernelModules = [
+    "i2c-dev"
+    "ddcci_backlight"
+  ];
+  services.udev.extraRules = ''
+    KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+  '';
+  users.users."${userName}".extraGroups = [ "i2c" ];
+  # ===================================== #
 
   # Networking
   networking.hostName = hostName;
