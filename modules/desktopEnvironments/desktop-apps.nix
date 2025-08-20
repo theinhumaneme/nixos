@@ -38,4 +38,14 @@
       zip
     ]);
 
+  # ============================ #
+  # Program Configurations
+  programs = {
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
+  };
+
+  # ============================ #
 }
