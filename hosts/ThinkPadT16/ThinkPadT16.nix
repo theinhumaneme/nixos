@@ -7,10 +7,11 @@ let
   enableDevTools = true;
   enableDocker = false;
   enableJavaTooling = false;
-  enableNeoVim = true;
+  enableNeoVim = false;
   enableNodeJsTooling = false;
   enableRustTooling = true;
   enableTLP = false;
+  enableZedEditor = true;
 in
 {
   _module.args = {
@@ -22,6 +23,7 @@ in
       enableJavaTooling
       enableNodeJsTooling
       enableRustTooling
+      enableZedEditor
       ;
 
   };
@@ -38,6 +40,7 @@ in
     ./../../user/user.nix
     ./hardware-configuration.nix
   ]
+
   ++ lib.optionals enableAutoCpuFreq [ ../../modules/auto-cpufreq.nix ]
   ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
   ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
@@ -46,8 +49,8 @@ in
   ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
   ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
   ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
-  ++ lib.optionals enableTLP [ ../../modules/tlp.nix ];
-
+  ++ lib.optionals enableTLP [ ../../modules/tlp.nix ]
+  ++ lib.optionals enableZedEditor [ ../../modules/devStuff/zed.nix ];
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 

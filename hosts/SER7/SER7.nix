@@ -12,10 +12,11 @@ let
   enableDevTools = true;
   enableDocker = false;
   enableJavaTooling = false;
-  enableNeoVim = true;
+  enableNeoVim = false;
   enableNodeJsTooling = false;
   enableRustTooling = false;
   enableTLP = false;
+  enableZedEditor = true;
 in
 {
   _module.args = {
@@ -27,6 +28,7 @@ in
       enableJavaTooling
       enableNodeJsTooling
       enableRustTooling
+      enableZedEditor
       ;
 
   };
@@ -51,8 +53,8 @@ in
   ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
   ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
   ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
-  ++ lib.optionals enableTLP [ ../../modules/tlp.nix ];
-
+  ++ lib.optionals enableTLP [ ../../modules/tlp.nix ]
+  ++ lib.optionals enableZedEditor [ ../../modules/devStuff/zed.nix ];
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
