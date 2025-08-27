@@ -52,10 +52,10 @@ in
   ++ lib.optionals enableTLP [ ../../modules/tlp.nix ]
   ++ lib.optionals enableZedEditor [ ../../modules/devStuff/zed.nix ];
   # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
+  time.timeZone = "America/New_York";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_cachyos-rc;
 
     kernelParams = [
       "amd_pstate=guided"
