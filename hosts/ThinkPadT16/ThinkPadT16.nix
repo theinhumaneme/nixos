@@ -2,7 +2,7 @@
 let
   userName = "kalyanm";
   hostName = "ThinkPadT16";
-  enableAutoCpuFreq = true;
+  enableAutoCpuFreq = false;
   enableCTooling = true;
   enableDevTools = true;
   enableDocker = false;
@@ -25,7 +25,6 @@ in
       enableRustTooling
       enableZedEditor
       ;
-
   };
 
   imports = [
