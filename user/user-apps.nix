@@ -19,14 +19,11 @@
         element-desktop # Matrix Client
         fastfetch # terminal sysinfo
         gimp
-        jellyfin-media-player # jellyfin client
         libreoffice-qt6-fresh
         mpv
         obsidian
         spotify
-        stremio
         telegram-desktop
-        transmission_4-gtk
         zoom-us
       ]);
   };
