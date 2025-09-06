@@ -17,8 +17,9 @@
       experimental-features = [
         "nix-command"
         "flakes"
-      ];
+        "parallel-eval"];
       lazy-trees = true;
+      eval-cores = 0;  # Enable Determinate Nix Parallel Evaluation
     };
 
     gc = {
