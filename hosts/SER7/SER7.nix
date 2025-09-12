@@ -39,7 +39,8 @@ in
     ../../modules/bluetooth.nix
     ../../modules/browser.nix
     ../../modules/desktopEnvironments/fish.nix
-    ./SER7-mods/niri.nix
+    ../../modules/desktopEnvironments/gnome.nix
+    # ./SER7-mods/niri.nix
     ../../modules/sysctl-config.nix
     ../../user/user-apps.nix
     ./../../user/user.nix
