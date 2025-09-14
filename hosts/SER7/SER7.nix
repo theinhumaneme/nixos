@@ -10,7 +10,7 @@ let
   enableAutoCpuFreq = false;
   enableCTooling = true;
   enableDevTools = true;
-  enableDocker = false;
+  enableDocker = true;
   enableJavaTooling = false;
   enableNeoVim = false;
   enableNodeJsTooling = false;
