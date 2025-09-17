@@ -16,7 +16,8 @@ let
   enableNodeJsTooling = false;
   enableRustTooling = false;
   enableTLP = false;
-  enableZedEditor = true;
+  enableZedEditor = false;
+  enableVSCode = true;
 in
 {
   _module.args = {
@@ -29,6 +30,7 @@ in
       enableNodeJsTooling
       enableRustTooling
       enableZedEditor
+      enableVSCode
       ;
 
   };
@@ -55,7 +57,8 @@ in
   ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
   ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
   ++ lib.optionals enableTLP [ ../../modules/tlp.nix ]
-  ++ lib.optionals enableZedEditor [ ../../modules/devStuff/zed.nix ];
+  ++ lib.optionals enableZedEditor [ ../../modules/devStuff/zed.nix ]
+  ++ lib.optionals enableVSCode [ ../../modules/devStuff/vscode.nix ];
   # Set your time zone.
   time.timeZone = "America/New_York";
 
