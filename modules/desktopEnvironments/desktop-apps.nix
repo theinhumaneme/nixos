@@ -27,16 +27,7 @@
       papers # latest document-viewer
       resources # Gnome Resources
       varia # Download Manager Based on aria2c and yt-dlp
-    ]
-    # Packages required for the Gnome Files and File Roller
-    ++ (with pkgsUnstable; [
-      _7zz
-      file-roller # Gnome File Archive Tool
-      nautilus # Gnome File Manager
-      unrar
-      unzip
-      zip
-    ]);
+    ];
 
   # ============================ #
   # Program Configurations

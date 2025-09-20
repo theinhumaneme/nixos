@@ -49,9 +49,11 @@
       gnomeExtensions.blur-my-shell
       gnomeExtensions.clipboard-history
     ])
-    # Packages required for the File Roller
+    # Packages required for the Gnome Files and File Roller
     ++ (with pkgs; [
       _7zz
+      file-roller # Gnome File Archive Tool
+      nautilus # Gnome File Manager
       unrar
       unzip
       zip
