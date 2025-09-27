@@ -59,10 +59,10 @@
   # Networking
   networking = {
     nameservers = [
-      "1.0.0.1#one.one.one.one"
-      "1.1.1.1#one.one.one.one"
-      "2606:4700:4700::1001#one.one.one.one"
-      "2606:4700:4700::1111#one.one.one.one"
+      "1.0.0.1"
+      "1.1.1.1"
+      "2606:4700:4700::1001"
+      "2606:4700:4700::1111"
     ];
     firewall = {
       enable = true;
@@ -70,7 +70,7 @@
     };
     networkmanager = {
       enable = true;
-      dns = "systemd-resolved";
+      # dns = "systemd-resolved";
       plugins = [
         pkgs.networkmanager-fortisslvpn
         pkgs.networkmanager-iodine
@@ -94,16 +94,6 @@
     };
     pulseaudio.enable = false;
 
-    resolved = {
-      enable = true;
-      dnsovertls = "true";
-      dnssec = "true";
-      domains = [ "~." ];
-      fallbackDns = [
-        "8.8.8.8"
-        "2001:4860:4860::8844"
-      ];
-    };
     pipewire = {
       enable = true;
       alsa.enable = true;
