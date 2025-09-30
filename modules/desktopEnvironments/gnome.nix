@@ -44,8 +44,8 @@
     # Customization and Tweaks
     ++ (with pkgs; [
       #      gnome-tweaks
-      #      gnomeExtensions.dash2dock-lite
-      #      gnomeExtensions.vitals
+      gnomeExtensions.dash2dock-lite
+      gnomeExtensions.vitals
       gnomeExtensions.blur-my-shell
       gnomeExtensions.clipboard-history
     ])
