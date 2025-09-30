@@ -57,7 +57,7 @@ in
   time.timeZone = "America/New_York";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-rc;
+    kernelPackages = pkgs.linuxPackages_cachyos-gcc;
 
     kernelParams = [
       "amd_pstate=guided"
