@@ -27,6 +27,7 @@
       papers # latest document-viewer
       resources # Gnome Resources
       varia # Download Manager Based on aria2c and yt-dlp
+      eyedropper # gnome-color-picker
     ];
 
   # ============================ #
