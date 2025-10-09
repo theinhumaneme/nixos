@@ -31,7 +31,7 @@ in
 
   imports = [
     # Include the results of the hardware scan.
-    ../../hosts/common.nix
+    ../../hosts/common/common.nix
     ../../modules/bluetooth.nix
     ../../modules/browser.nix
     ../../modules/desktopEnvironments/fish.nix

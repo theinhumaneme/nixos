@@ -58,8 +58,5 @@
       unzip
       zip
     ]);
-
-  # All Common Desktop Apps
-  imports = [ ./desktop-apps.nix ];
   # home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
 }
