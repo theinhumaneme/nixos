@@ -13,7 +13,4 @@
     oxygen
     elisa
   ];
-
-  # All Common Desktop Apps
-  imports = [ ./desktop-apps.nix ];
 }

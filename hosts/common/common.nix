@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ../modules/desktopEnvironments/fish.nix ];
+  imports = [
+    ../modules/desktopEnvironments/fish.nix
+    ../../user/desktop-apps.nix
+  ];
   nix = {
     settings = {
       substituters = [
