@@ -17,8 +17,10 @@
       experimental-features = [
         "nix-command"
         "flakes"
+        "parallel-eval"
       ];
       lazy-trees = true;
+      eval-cores = 0;
     };
 
     gc = {
