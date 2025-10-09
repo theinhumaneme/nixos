@@ -1,25 +1,17 @@
-{ pkgs, lib, ... }:
-let
-  userName = "kalyanm";
-  hostName = "ThinkPadT16";
-in
 {
-  _module.args = {
-    inherit
-      userName
-      ;
-  };
-
+  pkgs,
+  lib,
+  userName,
+  hostName,
+  ...
+}:
+{
   imports = [
     # Include the results of the hardware scan.
-    ../../hosts/common/common.nix
+    ../common/common.nix
+    ../common/specializations.nix
     ../../modules/bluetooth.nix
-    ../../modules/browser.nix
-    ../../modules/desktopEnvironments/fish.nix
-    ../../modules/desktopEnvironments/gnome.nix
     ../../modules/sysctl-config.nix
-    ../../user/user-apps.nix
-    ./../../user/user.nix
     ./hardware-configuration.nix
   ];
   # Set your time zone.
