@@ -82,6 +82,7 @@
         ThinkPadT16 = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
+            inherit self;
             inherit pkgsUnstable;
             inherit chaotic;
             inherit zen-browser;
@@ -109,6 +110,7 @@
         SER7 = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
+            inherit self;
             inherit pkgsUnstable;
             inherit chaotic;
             inherit zen-browser;
