@@ -82,6 +82,9 @@
         ThinkPadT16 = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
+            userName = "kalyanm";
+            hostName = "ThinkPadT16";
+            hostMachine = "ThinkPadT16";
             inherit self;
             inherit pkgsUnstable;
             inherit chaotic;
@@ -110,6 +113,9 @@
         SER7 = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
+            userName = "kalyanm";
+            hostName = "SER7";
+            hostMachine = "SER7";
             inherit self;
             inherit pkgsUnstable;
             inherit chaotic;

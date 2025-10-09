@@ -2,31 +2,17 @@
   pkgs,
   lib,
   config,
+  userName,
+  hostName,
   ...
 }:
-let
-  userName = "kalyanm";
-  hostName = "SER7";
-in
 {
-  _module.args = {
-    inherit
-      userName
-      ;
-
-  };
-
   imports = [
     # Include the results of the hardware scan.
-    ../../hosts/common/common.nix
+    ../common/common.nix
+    ../common/specializations.nix
     ../../modules/bluetooth.nix
-    ../../modules/browser.nix
-    ../../modules/desktopEnvironments/fish.nix
-    ../../modules/desktopEnvironments/gnome.nix
-    # ./SER7-mods/niri.nix
     ../../modules/sysctl-config.nix
-    ../../user/user-apps.nix
-    ./../../user/user.nix
     ./hardware-configuration.nix
   ];
   # Set your time zone.

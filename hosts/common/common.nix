@@ -1,8 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
-    ../modules/desktopEnvironments/fish.nix
+    ./fish.nix
     ../../user/desktop-apps.nix
+    ../../user/user-apps.nix
+    ./../../user/user.nix
+    ../../modules/browser.nix
+
   ];
   nix = {
     settings = {
