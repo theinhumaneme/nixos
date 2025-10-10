@@ -90,7 +90,7 @@ in
   networking.hostName = hostName;
 
   # Enable Fingerprint Support
-  services.fprintd.enable = true;
+  services.fprintd.enable = false;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
