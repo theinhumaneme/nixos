@@ -27,6 +27,8 @@
       resources # Gnome Resources
       varia # Download Manager Based on aria2c and yt-dlp
       eyedropper # gnome-color-picker
+      gnome-calendar # gnome-calendar
+      pomodoro-gtk # pomodoro app
     ];
 
   # ============================ #
