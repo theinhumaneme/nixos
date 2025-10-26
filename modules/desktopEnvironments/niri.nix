@@ -48,6 +48,15 @@
       xdg-desktop-portal-gnome # required for screen-casting
       xdg-desktop-portal-gtk
     ]
+    # Packages required for the Gnome Files and File Roller
+    ++ (with pkgs; [
+      _7zz
+      file-roller # Gnome File Archive Tool
+      nautilus # Gnome File Manager
+      unrar
+      unzip
+      zip
+    ])
     ++ (with pkgsUnstable; [
       alacritty # terminal
       brightnessctl # Manage Display Backlight
