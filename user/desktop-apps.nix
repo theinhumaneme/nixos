@@ -1,6 +1,6 @@
 {
   userName,
-  pkgsUnstable,
+  pkgs,
   ...
 }:
 {
@@ -9,8 +9,7 @@
 
   users.users."${userName}".packages =
     # Apps
-    with pkgsUnstable;
-    [
+    with pkgs; [
       baobab # Disk Usage Analyzer
       collision # Gnome Circle Checksum App
       curtail # image compression tool
