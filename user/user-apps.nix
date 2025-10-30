@@ -10,7 +10,7 @@
       with pkgs;
       [
         android-tools # fastboot + adb
-        aria # CLI based download manager
+        aria2 # CLI based download manager
         btop-rocm # Terminal Resource Monitor
       ]
       ++ (with pkgsUnstable; [
