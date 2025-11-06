@@ -14,7 +14,7 @@
   };
   programs = {
     niri = {
-      package = pkgs.niri_git;
+      package = pkgs.niri;
       enable = true;
     };
   };
