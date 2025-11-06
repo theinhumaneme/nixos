@@ -25,6 +25,5 @@ in
       ./browsers/zen-browser.nix
 
     ];
-  # home-manager.users."${userName}" = import ./browsers/home.nix { inherit pkgs pkgsUnstable; };
 
 }

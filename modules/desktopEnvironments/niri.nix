@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgsUnstable,
   userName,
   ...
 }:
@@ -57,7 +56,7 @@
       unzip
       zip
     ])
-    ++ (with pkgsUnstable; [
+    ++ (with pkgs; [
       alacritty # terminal
       brightnessctl # Manage Display Backlight
       hypridle # Hypr Ecosystem Idle Daemon

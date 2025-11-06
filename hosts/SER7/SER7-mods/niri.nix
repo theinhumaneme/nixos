@@ -10,8 +10,9 @@
     # Apps
     with pkgs;
     [
+      ddcutil # external display backlight management
     ]
     ++ (with pkgsUnstable; [
-      ddcutil # external display backlight management
+
     ]);
 }

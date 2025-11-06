@@ -1,14 +1,17 @@
-{ pkgsUnstable, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   gtk = {
     enable = true;
     cursorTheme = {
-      package = pkgsUnstable.bibata-cursors;
+      package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
     iconTheme = {
-      package = pkgsUnstable.papirus-icon-theme;
+      package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
   };

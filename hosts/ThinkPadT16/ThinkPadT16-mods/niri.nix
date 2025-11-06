@@ -10,9 +10,10 @@
     # Apps
     with pkgs;
     [
+      brightnessctl # Manage Display Backlight
     ]
     ++ (with pkgsUnstable; [
-      brightnessctl # Manage Display Backlight
+
     ]);
 
 }

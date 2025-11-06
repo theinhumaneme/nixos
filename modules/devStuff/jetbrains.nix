@@ -1,6 +1,6 @@
 {
   lib,
-  pkgsUnstable,
+  pkgs,
   userName,
   ...
 }:
@@ -14,11 +14,19 @@ in
 {
   users.users."${userName}".packages = (
     lib.optionals enableIntelijIdeaUltimate [
-      pkgsUnstable.jetbrains.idea-ultimate
+      pkgs.jetbrains.idea-ultimate
     ]
-    ++ lib.optionals enablePyCharmProfessional [ pkgsUnstable.jetbrains.pycharm-professional ]
-    ++ lib.optionals enableRustRover [ pkgsUnstable.jetbrains.rust-rover ]
-    ++ lib.optionals enableWebStorm [ pkgsUnstable.jetbrains.webstorm ]
-    ++ lib.optionals enableDataGrip [ pkgsUnstable.jetbrains.datagrip ]
+    ++ lib.optionals enablePyCharmProfessional [
+      pkgs.jetbrains.pycharm-professional
+    ]
+    ++ lib.optionals enableRustRover [
+      pkgs.jetbrains.rust-rover
+    ]
+    ++ lib.optionals enableWebStorm [
+      pkgs.jetbrains.webstorm
+    ]
+    ++ lib.optionals enableDataGrip [
+      pkgs.jetbrains.datagrip
+    ]
   );
 }
