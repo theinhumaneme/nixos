@@ -6,7 +6,7 @@
   ...
 }:
 {
-  imports = [./jetbrains.nix];
+  imports = [ ./jetbrains.nix ];
   users.users."${userName}".packages = (
     lib.optionals enableDevTools (
       with pkgsUnstable;
@@ -19,7 +19,7 @@
         lazygit
         ripgrep
         tmux
-
+        hugo
       ]
     )
   );
