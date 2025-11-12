@@ -16,7 +16,7 @@
       ++ (with pkgsUnstable; [
         bitwarden-desktop # Passoword Manager
         discord
-        element-desktop # Matrix Client
+        # element-desktop # Matrix Client
         fastfetch # terminal sysinfo
         gimp
         libreoffice-qt6-fresh
