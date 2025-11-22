@@ -20,6 +20,7 @@
         ripgrep
         tmux
         hugo
+        postman
       ]
     )
   );
