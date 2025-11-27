@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./fish.nix
@@ -95,12 +95,12 @@
   };
 
   # Services
+
   services = {
     scx = {
-      package = pkgs.scx.full;
-      enable = true;
-      scheduler = "scx_lavd";
-      extraArgs = [ "--autopower" ];
+      enable = lib.mkDefault true;
+      package = lib.mkDefault pkgs.scx.full;
+      scheduler = lib.mkDefault "scx_flash";
     };
     pulseaudio.enable = false;
 
