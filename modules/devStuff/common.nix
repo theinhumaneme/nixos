@@ -13,7 +13,6 @@
       [
         # dbeaver-bin
         # github-desktop
-        # postman
         gemini-cli
         git
         lazygit
