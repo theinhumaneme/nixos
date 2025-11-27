@@ -10,7 +10,6 @@
       with pkgs;
       [
         android-tools # fastboot + adb
-        aria2 # CLI based download manager
         btop-rocm # Terminal Resource Monitor
       ]
       ++ (with pkgsUnstable; [
@@ -26,6 +25,8 @@
         telegram-desktop
         zoom-us
         slack
+        aria2 # CLI based download manager
+
       ]);
   };
   programs.obs-studio = {
