@@ -4,8 +4,8 @@
   inputs = {
 
     # Stable Channel
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
+    nixpkgsStable.url = "github:NixOS/nixpkgs/release-25.11";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Additonal Flake Config
@@ -105,7 +105,15 @@
                 };
               }
             )
-            chaotic.nixosModules.default
+            # Chaotic Nyx Stable Channel Modules
+            chaotic.nixosModules.nyx-cache
+            chaotic.nixosModules.nyx-overlay
+            chaotic.nixosModules.nyx-registry
+            chaotic.nixosModules.mesa-git
+
+            # Chaotic Nyx unstable Channel Modules
+            # chaotic.nixosModules.default
+
             # Load the Determinate module
             determinate.nixosModules.default
           ];
@@ -136,7 +144,15 @@
                 };
               }
             )
-            chaotic.nixosModules.default
+            # Chaotic Nyx Stable Channel Modules
+            chaotic.nixosModules.nyx-cache
+            chaotic.nixosModules.nyx-overlay
+            chaotic.nixosModules.nyx-registry
+            chaotic.nixosModules.mesa-git
+
+            # Chaotic Nyx unstable Channel Modules
+            # chaotic.nixosModules.default
+
             # Load the Determinate module
             determinate.nixosModules.default
           ];
