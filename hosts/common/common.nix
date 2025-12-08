@@ -100,7 +100,8 @@
     scx = {
       enable = lib.mkDefault true;
       package = lib.mkDefault pkgs.scx.full;
-      scheduler = lib.mkDefault "scx_flash";
+      scheduler = lib.mkDefault "scx_lavd";
+      extraArgs = lib.mkDefault [ "--autopower" ];
     };
     pulseaudio.enable = false;
 
