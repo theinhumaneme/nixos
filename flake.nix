@@ -16,12 +16,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgsStable";
     };
-    # Chaotic Nyx
-    # URL - https://www.nyx.chaotic.cx/
-    # For CachyOS Kernel
-    chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    };
 
     #
     # Zen Browser Flake
@@ -62,7 +56,6 @@
       nixpkgsStable,
       nixpkgsUnstable,
       home-manager,
-      chaotic,
       zen-browser,
       determinate,
       nixvim,
@@ -87,7 +80,6 @@
             hostMachine = "ThinkPadT16";
             inherit self;
             inherit pkgsUnstable;
-            inherit chaotic;
             inherit zen-browser;
             inherit inputs;
           };
@@ -105,15 +97,6 @@
                 };
               }
             )
-            # Chaotic Nyx Stable Channel Modules
-            chaotic.nixosModules.nyx-cache
-            chaotic.nixosModules.nyx-overlay
-            chaotic.nixosModules.nyx-registry
-            chaotic.nixosModules.mesa-git
-
-            # Chaotic Nyx unstable Channel Modules
-            # chaotic.nixosModules.default
-
             # Load the Determinate module
             determinate.nixosModules.default
           ];
@@ -126,7 +109,6 @@
             hostMachine = "SER7";
             inherit self;
             inherit pkgsUnstable;
-            inherit chaotic;
             inherit zen-browser;
             inherit inputs;
           };
@@ -144,15 +126,6 @@
                 };
               }
             )
-            # Chaotic Nyx Stable Channel Modules
-            chaotic.nixosModules.nyx-cache
-            chaotic.nixosModules.nyx-overlay
-            chaotic.nixosModules.nyx-registry
-            chaotic.nixosModules.mesa-git
-
-            # Chaotic Nyx unstable Channel Modules
-            # chaotic.nixosModules.default
-
             # Load the Determinate module
             determinate.nixosModules.default
           ];
