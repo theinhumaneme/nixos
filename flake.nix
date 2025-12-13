@@ -4,8 +4,8 @@
   inputs = {
 
     # Stable Channel
-    nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
-    nixpkgsStable.url = "github:NixOS/nixpkgs/release-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Additonal Flake Config
