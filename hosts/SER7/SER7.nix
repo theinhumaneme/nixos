@@ -19,7 +19,7 @@
   time.timeZone = "America/New_York";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_17;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     kernelParams = [
       "amd_pstate=guided"
