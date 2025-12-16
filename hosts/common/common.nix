@@ -128,9 +128,6 @@
   # Enable sound with pipewire.
   security.rtkit.enable = true;
 
-  # https://nixos.org/manual/nixos/stable/options#opt-system.rebuild.enableNg
-  system.rebuild.enableNg = true;
-
   environment.systemPackages = with pkgs; [
     busybox
     fwupd
