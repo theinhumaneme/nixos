@@ -8,7 +8,7 @@ let
   enableAutoCpuFreq = false;
   enableCTooling = true;
   enableDevTools = true;
-  enableDocker = true;
+  enableDocker = false;
   enableJavaTooling = false;
   enableNeoVim = false;
   enableNodeJsTooling = false;
