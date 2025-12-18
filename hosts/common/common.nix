@@ -122,6 +122,11 @@
   zramSwap = {
     enable = true;
   };
+  systemd = {
+    network = {
+      wait-online.enable = true;
+    };
+  };
 
   hardware.graphics.enable = true;
 
