@@ -37,7 +37,7 @@
     # Apps
     with pkgs;
     [
-      ghostty # new age terminal
+      ptyxis # gnome-49 default terminal
       gnome-power-manager # power management tool
       gradia # screenshot application
     ]
