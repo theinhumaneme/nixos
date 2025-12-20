@@ -6,7 +6,7 @@ let
   enableChrome = false;
   enableFirefox = false;
   enableBrave = true;
-  enableZenBrowser = false;
+  enableZenBrowser = true;
 in
 {
   imports =
