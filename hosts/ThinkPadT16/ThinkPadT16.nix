@@ -15,7 +15,7 @@
     ./hardware-configuration.nix
   ];
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "America/Chicago";
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
