@@ -9,6 +9,7 @@
     "${userName}" = {
       isNormalUser = true;
       description = "Kalyan Mudumby";
+      shell = pkgs.fish;
       extraGroups = [
         "networkmanager"
         "wheel"

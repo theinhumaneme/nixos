@@ -1,10 +1,5 @@
-{ pkgsUnstable, userName, ... }:
+{ ... }:
 {
-  users.users."${userName}" = {
-    shell = pkgsUnstable.fish;
-    packages = with pkgsUnstable; [ starship ];
-  };
-
   programs = {
     fish = {
       enable = true;
