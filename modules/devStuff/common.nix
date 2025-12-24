@@ -15,6 +15,8 @@
         ripgrep
         tmux
         hugo
+        stow
+        tree
       ]
     )
   );
