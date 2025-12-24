@@ -7,7 +7,7 @@
 {
   home.packages = (
     lib.optionals enableJavaTooling [
-      pkgs.jdk
+      pkgs.jdk21_headless
       pkgs.maven
     ]
   );
