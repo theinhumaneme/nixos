@@ -1,12 +1,11 @@
 {
   lib,
   pkgsUnstable,
-  userName,
   enableRustTooling,
   ...
 }:
 {
-  users.users."${userName}".packages = (
+  home.packages = (
     lib.optionals enableRustTooling [
       pkgsUnstable.rustc
       pkgsUnstable.cargo
