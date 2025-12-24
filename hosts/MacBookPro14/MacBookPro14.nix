@@ -25,6 +25,7 @@
         ./devConfig.nix
         ../common/fish.nix
       ];
+      home.packages = [ pkgs.nerd-fonts.caskaydia-mono ];
       home.username = "kalyanmudumby";
       home.homeDirectory = "/Users/kalyanmudumby";
       home.stateVersion = "25.11";
