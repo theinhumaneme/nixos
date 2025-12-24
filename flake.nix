@@ -48,6 +48,15 @@
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgsUnstable";
     };
+
+    #
+    # Nix Darwin
+    # URL - https://github.com/LnL7/nix-darwin
+    # For MacOS Configuration
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -59,11 +68,12 @@
       zen-browser,
       determinate,
       nixvim,
+      nix-darwin,
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      pkgsUnstable = import nixpkgsUnstable {
+      lib = nixpkgs.lib;
+      pkgsUnstableFor = system: import nixpkgsUnstable {
         inherit system;
         config = {
           allowUnfree = true;
@@ -72,14 +82,14 @@
     in
     {
       nixosConfigurations = {
-        ThinkPadT16 = nixpkgs.lib.nixosSystem {
-          inherit system;
+        ThinkPadT16 = lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
             userName = "kalyanm";
             hostName = "ThinkPadT16";
             hostMachine = "ThinkPadT16";
+            pkgsUnstable = pkgsUnstableFor "x86_64-linux";
             inherit self;
-            inherit pkgsUnstable;
             inherit zen-browser;
             inherit inputs;
           };
@@ -90,25 +100,21 @@
             (
               { ... }:
               {
-                nixpkgs = {
-                  inherit system;
-                  # This configures the `pkgs` argument passed to all modules.
-                  config.allowUnfree = true;
-                };
+                nixpkgs.config.allowUnfree = true;
               }
             )
             # Load the Determinate module
             determinate.nixosModules.default
           ];
         };
-        SER7 = nixpkgs.lib.nixosSystem {
-          inherit system;
+        SER7 = lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
             userName = "kalyanm";
             hostName = "SER7";
             hostMachine = "SER7";
+            pkgsUnstable = pkgsUnstableFor "x86_64-linux";
             inherit self;
-            inherit pkgsUnstable;
             inherit zen-browser;
             inherit inputs;
           };
@@ -119,11 +125,7 @@
             (
               { ... }:
               {
-                nixpkgs = {
-                  inherit system;
-                  # This configures the `pkgs` argument passed to all modules.
-                  config.allowUnfree = true;
-                };
+                nixpkgs.config.allowUnfree = true;
               }
             )
             # Load the Determinate module
@@ -132,5 +134,27 @@
         };
       };
 
+      darwinConfigurations = {
+        MacBookPro14 = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            userName = "kalyanmudumby";
+            hostName = "MacBookPro14";
+            hostMachine = "MacBookPro14";
+            pkgsUnstable = pkgsUnstableFor "aarch64-darwin";
+            inherit self;
+            inherit zen-browser;
+            inherit inputs;
+          };
+          modules = [
+            ({ ... }: {
+        # Let Determinate Nix handle Nix configuration
+        nix.enable = false;
+      })
+            ./hosts/MacBookPro14/MacBookPro14.nix
+            home-manager.darwinModules.home-manager
+          ];
+        };
+      };
     };
 }
