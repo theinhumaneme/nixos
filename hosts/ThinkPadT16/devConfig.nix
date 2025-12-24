@@ -10,6 +10,7 @@ let
   enableDevTools = true;
   enableDocker = true;
   enableJavaTooling = false;
+  enableJetBrains = true;
   enableNeoVim = false;
   enableNodeJsTooling = false;
   enableRustTooling = true;
@@ -25,6 +26,7 @@ in
       enableDevTools
       enableDocker
       enableJavaTooling
+      enableJetBrains
       enableNodeJsTooling
       enableRustTooling
       enableZedEditor
@@ -40,6 +42,7 @@ in
     ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
     ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
+    ++ lib.optionals enableJetBrains [ ../../modules/devStuff/jetbrains.nix ]
     ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
     ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]

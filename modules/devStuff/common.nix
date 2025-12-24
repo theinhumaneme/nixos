@@ -5,7 +5,6 @@
   ...
 }:
 {
-  imports = [ ./jetbrains.nix ];
   home.packages = (
     lib.optionals enableDevTools (
       with pkgsUnstable;
