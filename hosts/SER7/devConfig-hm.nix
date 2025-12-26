@@ -1,14 +1,12 @@
 {
-  pkgs,
   lib,
-  pkgsUnstable,
   ...
 }:
 let
   enableCTooling = true;
   enableDevTools = true;
-  enableDocker = false;
-  enableJavaTooling = true;
+  enableJavaTooling = false;
+  enableNeoVim = false;
   enableNodeJsTooling = false;
   enableRustTooling = true;
 in
@@ -17,7 +15,6 @@ in
     inherit
       enableCTooling
       enableDevTools
-      enableDocker
       enableJavaTooling
       enableNodeJsTooling
       enableRustTooling
@@ -28,8 +25,8 @@ in
     [ ]
     ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
     ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
-    ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
+    ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
     ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ];
 }

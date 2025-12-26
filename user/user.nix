@@ -27,6 +27,10 @@
     };
   };
 
+  home-manager.users."${userName}" = {
+    home.stateVersion = "25.05";
+  };
+
   fonts = {
     packages = with pkgs; [
       adwaita-fonts

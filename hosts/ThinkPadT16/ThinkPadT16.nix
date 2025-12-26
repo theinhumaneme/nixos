@@ -3,6 +3,7 @@
   lib,
   userName,
   hostName,
+  pkgsUnstable,
   ...
 }:
 {
@@ -14,6 +15,15 @@
     ../../modules/sysctl-config.nix
     ./hardware-configuration.nix
   ];
+
+    home-manager.extraSpecialArgs = { inherit pkgsUnstable; };
+  home-manager.users.${userName} = {
+    imports = [
+      ./devConfig-hm.nix
+      ../common/fish.nix
+    ];
+  };
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 

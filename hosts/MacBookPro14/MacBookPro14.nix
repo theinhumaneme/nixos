@@ -4,8 +4,12 @@
   lib,
   pkgsUnstable,
   ...
-}: {
-  imports = [ ../common/nix.nix ];
+}:
+{
+  imports = [
+    ../common/nix.nix
+    ./devConfig-nixos.nix
+  ];
 
   environment.systemPackages = with pkgs; [ ];
 
@@ -22,7 +26,7 @@
     extraSpecialArgs = { inherit pkgsUnstable; };
     users.kalyanmudumby = {
       imports = [
-        ./devConfig.nix
+        ./devConfig-hm.nix
         ../common/fish.nix
       ];
       home.packages = [ pkgs.nerd-fonts.caskaydia-mono ];
