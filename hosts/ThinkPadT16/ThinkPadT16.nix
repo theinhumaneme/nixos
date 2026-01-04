@@ -14,9 +14,12 @@
     ../../modules/bluetooth.nix
     ../../modules/sysctl-config.nix
     ./hardware-configuration.nix
+    ./devConfig-nixos.nix
   ];
 
-    home-manager.extraSpecialArgs = { inherit pkgsUnstable; };
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = { inherit pkgsUnstable; };
   home-manager.users.${userName} = {
     imports = [
       ./devConfig-hm.nix
