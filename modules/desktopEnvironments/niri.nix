@@ -1,76 +1,81 @@
 {
   pkgs,
   userName,
+  lib,
+  config,
   ...
 }:
 {
-  services = {
-    displayManager = {
-      sddm.wayland.enable = true;
-      sddm.enable = true;
+  options.desktop.niri.enable = lib.mkEnableOption "Niri Desktop";
+
+  config = lib.mkIf config.desktop.niri.enable {
+    services = {
+      displayManager = {
+        sddm.wayland.enable = true;
+        sddm.enable = true;
+      };
+      power-profiles-daemon.enable = true;
     };
-    power-profiles-daemon.enable = true;
-  };
-  programs = {
-    niri = {
-      package = pkgs.niri;
-      enable = true;
-    };
-  };
-  # Enable Polkit Service
-  security.polkit.enable = true;
-  # Enable Gnome Keyring for Niri
-  security.pam.services.niri.enableGnomeKeyring = true;
-  # Add a service to start the gnome-polkit agent on startup
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
+    programs = {
+      niri = {
+        package = pkgs.niri;
+        enable = true;
       };
     };
+    # Enable Polkit Service
+    security.polkit.enable = true;
+    # Enable Gnome Keyring for Niri
+    security.pam.services.niri.enableGnomeKeyring = true;
+    # Add a service to start the gnome-polkit agent on startup
+    systemd = {
+      user.services.polkit-gnome-authentication-agent-1 = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = [ "graphical-session.target" ];
+        wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+      };
+    };
+    users.users."${userName}".packages =
+      # Apps
+      with pkgs;
+      [
+        adwaita-icon-theme
+        bibata-cursors
+        gnome-keyring # for secret management
+        xdg-desktop-portal-gnome # required for screen-casting
+        xdg-desktop-portal-gtk
+      ]
+      # Packages required for the Gnome Files and File Roller
+      ++ (with pkgs; [
+        _7zz
+        file-roller # Gnome File Archive Tool
+        nautilus # Gnome File Manager
+        unrar
+        unzip
+        zip
+      ])
+      ++ (with pkgs; [
+        alacritty # terminal
+        brightnessctl # Manage Display Backlight
+        hypridle # Hypr Ecosystem Idle Daemon
+        hyprlock # Hypr Ecosystem LockScreen
+        mako # notification daemon
+        networkmanagerapplet # Network Manager GUI
+        pavucontrol # Audio Control GUI
+        power-profiles-daemon
+        swww # Wallpaper Daemon
+        walker # Application Launcher
+        waybar # Status Bar
+        xwayland-satellite # XWayland Integration
+      ]);
+
+    #  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
   };
-  users.users."${userName}".packages =
-    # Apps
-    with pkgs;
-    [
-      adwaita-icon-theme
-      bibata-cursors
-      gnome-keyring # for secret management
-      xdg-desktop-portal-gnome # required for screen-casting
-      xdg-desktop-portal-gtk
-    ]
-    # Packages required for the Gnome Files and File Roller
-    ++ (with pkgs; [
-      _7zz
-      file-roller # Gnome File Archive Tool
-      nautilus # Gnome File Manager
-      unrar
-      unzip
-      zip
-    ])
-    ++ (with pkgs; [
-      alacritty # terminal
-      brightnessctl # Manage Display Backlight
-      hypridle # Hypr Ecosystem Idle Daemon
-      hyprlock # Hypr Ecosystem LockScreen
-      mako # notification daemon
-      networkmanagerapplet # Network Manager GUI
-      pavucontrol # Audio Control GUI
-      power-profiles-daemon
-      swww # Wallpaper Daemon
-      walker # Application Launcher
-      waybar # Status Bar
-      xwayland-satellite # XWayland Integration
-    ]);
-
-  #  home-manager.users."${userName}" = import ./home-gnome.nix { inherit pkgs pkgsUnstable; };
-
 }

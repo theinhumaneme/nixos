@@ -10,12 +10,17 @@
   imports = [
     # Include the results of the hardware scan.
     ../common/common.nix
-    ../common/specializations.nix
+    ../common/host-spec.nix
     ../../modules/bluetooth.nix
     ../../modules/sysctl-config.nix
     ./hardware-configuration.nix
     ./devConfig-nixos.nix
   ];
+
+  hostSpec = {
+    useSpecializations = false;
+    defaultDesktop = "gnome";
+  };
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
