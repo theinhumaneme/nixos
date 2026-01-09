@@ -28,7 +28,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/New_York";
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
