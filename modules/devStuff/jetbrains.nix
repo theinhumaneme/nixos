@@ -5,7 +5,7 @@
   ...
 }:
 let
-  enableIntelijIdeaUltimate = false;
+  enableIntelijIdeaUltimate = true;
   enablePyCharmProfessional = false;
   enableRustRover = false;
   enableWebStorm = false;
