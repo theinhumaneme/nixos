@@ -3,6 +3,7 @@
   imports = [
     ./fish.nix
     ./nix.nix
+    ./steam.nix
     ../../user/desktop-apps.nix
     ../../user/user-apps.nix
     ./../../user/user.nix
