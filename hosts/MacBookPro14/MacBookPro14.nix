@@ -24,7 +24,10 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit pkgsUnstable;  inherit pkgsStable; };
+    extraSpecialArgs = {
+      inherit pkgsUnstable;
+      inherit pkgsStable;
+    };
     users.kalyanmudumby = {
       imports = [
         ./devConfig-hm.nix

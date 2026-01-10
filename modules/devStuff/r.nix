@@ -7,8 +7,12 @@
 }:
 {
   home.packages = (
-    lib.optionals enableRTooling (with pkgs; [
-      R
-    ] ++ (with pkgsUnstable; [positron-bin] ))
+    lib.optionals enableRTooling (
+      with pkgs;
+      [
+        R
+      ]
+      ++ (with pkgsUnstable; [ positron-bin ])
+    )
   );
 }

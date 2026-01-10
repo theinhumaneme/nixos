@@ -1,5 +1,3 @@
-
-
 {
   lib,
   ...
@@ -33,5 +31,5 @@ in
     ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
     ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
-     ++ lib.optionals enableRTooling [ ../../modules/devStuff/r.nix ];
+    ++ lib.optionals enableRTooling [ ../../modules/devStuff/r.nix ];
 }

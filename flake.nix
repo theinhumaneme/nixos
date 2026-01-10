@@ -73,12 +73,14 @@
     }@inputs:
     let
       lib = nixpkgs.lib;
-      pkgsUnstableFor = system: import nixpkgsUnstable {
-        inherit system;
-        config = {
-          allowUnfree = true;
+      pkgsUnstableFor =
+        system:
+        import nixpkgsUnstable {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
         };
-      };
     in
     {
       nixosConfigurations = {
@@ -147,10 +149,13 @@
             inherit inputs;
           };
           modules = [
-            ({ ... }: {
-        # Let Determinate Nix handle Nix configuration
-        nix.enable = false;
-      })
+            (
+              { ... }:
+              {
+                # Let Determinate Nix handle Nix configuration
+                nix.enable = false;
+              }
+            )
             ./hosts/MacBookPro14/MacBookPro14.nix
             home-manager.darwinModules.home-manager
           ];

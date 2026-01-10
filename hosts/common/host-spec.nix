@@ -24,7 +24,12 @@ in
     };
 
     defaultDesktop = lib.mkOption {
-      type = lib.types.enum [ "gnome" "plasma" "niri" "none" ];
+      type = lib.types.enum [
+        "gnome"
+        "plasma"
+        "niri"
+        "none"
+      ];
       default = "none";
       description = "Default desktop environment to use if specializations are disabled.";
     };

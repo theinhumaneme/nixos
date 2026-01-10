@@ -12,7 +12,5 @@ in
       ;
   };
 
-  imports =
-    [ ]
-    ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ];
+  imports = [ ] ++ lib.optionals enableDocker [ ../../modules/devStuff/docker.nix ];
 }

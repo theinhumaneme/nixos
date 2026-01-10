@@ -6,7 +6,7 @@
 }:
 {
 
-    home.packages = (
+  home.packages = (
     lib.optionals enablePodman [
       pkgsUnstable.podman
     ]

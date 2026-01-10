@@ -7,10 +7,10 @@
 }:
 {
   users.users."${userName}".packages = (
-    lib.optionals enableVSCode(
+    lib.optionals enableVSCode (
       with pkgsUnstable;
       [
-         vscode-fhs
+        vscode-fhs
       ]
       ++ (with pkgsUnstable; [
         nixfmt-rfc-style
