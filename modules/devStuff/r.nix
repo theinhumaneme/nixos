@@ -12,7 +12,9 @@
       [
         R
       ]
-      ++ (with pkgsUnstable; [ positron-bin ])
+      ++ (with pkgsUnstable; [
+        rstudio
+      ])
     )
   );
 }
