@@ -9,6 +9,7 @@ let
   enableNodeJsTooling = false;
   enableRustTooling = true;
   enablePodman = false;
+  enableJetbrains = true;
 in
 {
   _module.args = {
@@ -19,6 +20,7 @@ in
       enableNodeJsTooling
       enableRustTooling
       enablePodman
+      enableJetbrains
       ;
   };
 
@@ -29,5 +31,6 @@ in
     ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
     ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
-    ++ lib.optionals enablePodman [ ../../modules/devStuff/podman.nix ];
+    ++ lib.optionals enablePodman [ ../../modules/devStuff/podman.nix ]
+    ++ lib.optionals enableJetbrains [ ../../modules/devStuff/jetbrains.nix ];
 }

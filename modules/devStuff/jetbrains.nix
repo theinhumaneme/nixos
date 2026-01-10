@@ -1,23 +1,22 @@
 {
   lib,
   pkgsUnstable,
-  userName,
   ...
 }:
 let
-  enableIntelijIdeaUltimate = false;
+  enableIntelijIdeaUltimate = true;
   enablePyCharmProfessional = false;
   enableRustRover = false;
   enableWebStorm = false;
   enableDataGrip = false;
 in
 {
-  users.users."${userName}".packages = (
+  home.packages = (
     lib.optionals enableIntelijIdeaUltimate [
-      pkgsUnstable.jetbrains.idea-ultimate
+      pkgsUnstable.jetbrains.idea
     ]
     ++ lib.optionals enablePyCharmProfessional [
-      pkgsUnstable.jetbrains.pycharm-professional
+      pkgsUnstable.jetbrains.pycharm
     ]
     ++ lib.optionals enableRustRover [
       pkgsUnstable.jetbrains.rust-rover
