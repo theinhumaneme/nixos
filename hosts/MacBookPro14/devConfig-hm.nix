@@ -25,7 +25,7 @@ in
   };
 
   imports =
-    [ ]
+    [./home.nix ]
     ++ lib.optionals enableCTooling [ ../../modules/devStuff/c.nix ]
     ++ lib.optionals enableDevTools [ ../../modules/devStuff/common.nix ]
     ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
