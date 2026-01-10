@@ -13,8 +13,7 @@
         vscode-fhs
       ]
       ++ (with pkgsUnstable; [
-        nixfmt-rfc-style
-        prettier
+        nixfmt
         kdlfmt
       ])
     )

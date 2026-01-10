@@ -10,8 +10,7 @@
       vscode
       obsidian
       telegram-desktop
-      nixfmt-rfc-style
-      prettier
+      nixfmt
       kdlfmt
     ])
   );
