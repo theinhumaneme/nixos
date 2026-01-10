@@ -9,6 +9,7 @@ let
   enableNeoVim = false;
   enableNodeJsTooling = false;
   enableRustTooling = true;
+  enableRTooling = true;
 in
 {
   _module.args = {
@@ -18,6 +19,7 @@ in
       enableJavaTooling
       enableNodeJsTooling
       enableRustTooling
+      enableRTooling
       ;
   };
 
@@ -28,5 +30,6 @@ in
     ++ lib.optionals enableJavaTooling [ ../../modules/devStuff/java.nix ]
     ++ lib.optionals enableNeoVim [ ../../modules/devStuff/neovim/neovim.nix ]
     ++ lib.optionals enableNodeJsTooling [ ../../modules/devStuff/nodejs.nix ]
-    ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ];
+    ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
+     ++ lib.optionals enableRTooling [ ../../modules/devStuff/r.nix ];
 }
