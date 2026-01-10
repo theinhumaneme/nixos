@@ -8,7 +8,7 @@ let
   enableJavaTooling = true;
   enableNodeJsTooling = false;
   enableRustTooling = true;
-  enablePodman = true;
+  enablePodman = false;
 in
 {
   _module.args = {
