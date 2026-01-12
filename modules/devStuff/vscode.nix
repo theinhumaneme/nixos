@@ -1,21 +1,20 @@
 {
   lib,
+  pkgs,
   pkgsUnstable,
   userName,
   enableVSCode,
   ...
 }:
-{
-  users.users."${userName}".packages = (
-    lib.optionals enableVSCode (
-      with pkgsUnstable;
-      [
-        vscode-fhs
-      ]
-      ++ (with pkgsUnstable; [
-        nixfmt
-        kdlfmt
-      ])
-    )
-  );
+lib.mkIf enableVSCode {
+  programs = {
+    vscode = {
+      enable = true;
+      package = if pkgs.stdenv.isDarwin then pkgsUnstable.vscode else pkgsUnstable.vscode-fhs;
+    };
+  };
+  home.packages = [
+    pkgs.nixfmt
+    pkgs.kdlfmt
+  ];
 }

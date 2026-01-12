@@ -11,6 +11,8 @@ let
   enablePodman = false;
   enableJetbrains = true;
   enableRTooling = true;
+  enableVSCode = true;
+  enableZedEditor = false;
 in
 {
   _module.args = {
@@ -23,6 +25,8 @@ in
       enablePodman
       enableJetbrains
       enableRTooling
+      enableVSCode
+      enableZedEditor
       ;
   };
 
@@ -36,5 +40,7 @@ in
   ++ lib.optionals enableRustTooling [ ../../modules/devStuff/rust.nix ]
   ++ lib.optionals enablePodman [ ../../modules/devStuff/podman.nix ]
   ++ lib.optionals enableJetbrains [ ../../modules/devStuff/jetbrains.nix ]
-  ++ lib.optionals enableRTooling [ ../../modules/devStuff/r.nix ];
+  ++ lib.optionals enableRTooling [ ../../modules/devStuff/r.nix ]
+  ++ lib.optionals enableZedEditor [ ../../modules/devStuff/zed.nix ]
+  ++ lib.optionals enableVSCode [ ../../modules/devStuff/vscode.nix ];
 }
