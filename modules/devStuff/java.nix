@@ -4,11 +4,14 @@
   enableJavaTooling,
   ...
 }:
-{
-  home.packages = (
-    lib.optionals enableJavaTooling [
-      pkgs.jdk21_headless
+lib.mkIf enableJavaTooling {
+  programs = {
+    java = {
+      enable = true;
+      package = pkgs.javaPackages.compiler.openjdk11-bootstrap;
+    };
+  };
+   home.packages = [
       pkgs.maven
-    ]
-  );
+    ];
 }

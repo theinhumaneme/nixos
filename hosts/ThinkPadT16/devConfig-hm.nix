@@ -5,7 +5,7 @@
 let
   enableCTooling = true;
   enableDevTools = true;
-  enableJavaTooling = false;
+  enableJavaTooling = true;
   enableNeoVim = false;
   enableNodeJsTooling = false;
   enableRustTooling = true;
