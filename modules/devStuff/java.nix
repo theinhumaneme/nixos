@@ -11,7 +11,7 @@ lib.mkIf enableJavaTooling {
       package = pkgs.javaPackages.compiler.openjdk11-bootstrap;
     };
   };
-   home.packages = [
-      pkgs.maven
-    ];
+  home.packages = [
+    pkgs.maven
+  ];
 }
