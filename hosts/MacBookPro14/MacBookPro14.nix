@@ -31,6 +31,7 @@
       imports = [
         ./devConfig-hm.nix
         ../common/fish.nix
+        ../../user/user-apps-hm.nix
       ];
       home.packages = [ pkgs.nerd-fonts.caskaydia-mono ];
       home.username = "kalyanmudumby";

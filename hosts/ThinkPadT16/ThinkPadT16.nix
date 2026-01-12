@@ -29,6 +29,7 @@
     imports = [
       ./devConfig-hm.nix
       ../common/fish.nix
+      ../../user/user-apps-hm.nix
     ];
   };
 

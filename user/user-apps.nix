@@ -10,23 +10,17 @@
       with pkgs;
       [
         android-tools # fastboot + adb
-        btop-rocm # Terminal Resource Monitor
       ]
       ++ (with pkgsUnstable; [
-        bitwarden-desktop # Passoword Manager
-        discord
+        bitwarden-desktop
         # element-desktop # Matrix Client
-        fastfetch # terminal sysinfo
         gimp
         libreoffice-qt6-fresh
         mpv
-        obsidian
         spotify
         telegram-desktop
         zoom-us
         slack
-        aria2 # CLI based download manager
-
       ]);
   };
   programs.obs-studio = {
