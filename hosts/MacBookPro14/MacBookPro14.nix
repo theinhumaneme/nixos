@@ -9,7 +9,6 @@
 {
   imports = [
     ../common/nix.nix
-    ./devConfig-nixos.nix
   ];
 
   environment.systemPackages = with pkgs; [ ];
