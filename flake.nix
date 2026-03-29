@@ -6,7 +6,7 @@
     # Stable Channel
     nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
     nixpkgsStable.url = "github:NixOS/nixpkgs/release-25.11";
-    nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgsUnstable.url = "github:NixOS/nixpkgs/release-25.11";
 
     # Additonal Flake Config
     #
