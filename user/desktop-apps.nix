@@ -29,6 +29,7 @@
       eyedropper # gnome-color-picker
       gnome-calendar # gnome-calendar
       pomodoro-gtk # pomodoro app
+      cloudflared
     ];
 
   # ============================ #
@@ -40,5 +41,18 @@
     };
   };
 
+  services.cloudflared = {
+    enable = true;
+    tunnels = {
+      "dcd6dbde-e116-4755-a48a-dc88a8cd8227" = {
+        credentialsFile = "/home/kalyanm/.cloudflared/dcd6dbde-e116-4755-a48a-dc88a8cd8227.json";
+        default = "http_status:404";
+        ingress = {
+          "couch-db.kalyanmudumby.com" = "http://localhost:5984";
+        };
+      };
+
+    };
+  };
   # ============================ #
 }
