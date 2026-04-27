@@ -10,7 +10,7 @@ let
   enableNodeJsTooling = false;
   enableRustTooling = true;
   enableJetbrains = true;
-  enableRTooling = true;
+  enableRTooling = false;
   enableVSCode = true;
   enableZedEditor = false;
 in
